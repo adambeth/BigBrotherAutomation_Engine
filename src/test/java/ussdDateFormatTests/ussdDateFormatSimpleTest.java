@@ -33,7 +33,7 @@ public class ussdDateFormatSimpleTest extends baseUSSD {
         };
     }
 
-    @Test(dataProvider = "ussdDateFormatTestData")
+    @Test(dataProvider = "ussdDateFormatTestData", enabled = false)
     public static void IsNull_SimpleTest(String msisdn, String sessionID, String network, String type, String msg,String nonFormattedDate) {
         createUSSDData x = new createUSSDData();
         ussd payLoad;

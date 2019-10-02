@@ -17,7 +17,7 @@ public class ussdInputTextTest extends baseUSSD {
 
     @DataProvider(name = "ussdInputTextData", parallel = true)
     public Object[] createUSSDTestData() {
-        String message = "DisplayText/PlainText";
+        String message = "AskForInput/InputText";
         return new String[][]{
 
                 {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "nameone"},

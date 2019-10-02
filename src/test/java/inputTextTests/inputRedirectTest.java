@@ -45,7 +45,7 @@ public class inputRedirectTest extends baseUSSD {
                 .then()
                 .log().all()
                 .assertThat()
-                .body("ussd.msg", equalTo("Redirect/test"))
+                .body("ussd.msg", equalTo("You have been redirected"))
                 .body("ussd.type",equalTo("3"))
                 .statusCode(200);
     }

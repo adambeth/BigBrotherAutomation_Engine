@@ -33,7 +33,6 @@ public class createUSSDData {
         return payload;
 
     }
-
     public ussd getUSSDPayloadPlainText(String msisdn, String sessioID, String network, String type, String msg) {
 
 
@@ -54,7 +53,6 @@ public class createUSSDData {
         return payload;
 
     }
-
     public ussd getUSSDPayloadSimpleMenu(String msisdn, String sessioID, String network, String type, String msg) {
 
 
@@ -77,7 +75,6 @@ public class createUSSDData {
         return payload;
 
     }
-
     public ussd getIsEmptySimpleUSSD(String msisdn, String sessioID, String network, String type, String msg) {
 
 
@@ -99,7 +96,27 @@ public class createUSSDData {
         return payload;
 
     }
+    public ussd getIsNullySimpleUSSD(String msisdn, String sessioID, String network, String type, String msg) {
 
+
+        ussd payload = new ussd(msisdn, sessioID, network, type, msg);
+        given()
+                .contentType(ContentType.XML)
+                .log().all()
+                .body(payload)
+                .when()
+                .post(testEndpoints.USSD)
+                .then()
+                .log().all()
+                .assertThat()
+                .body("ussd.msg", equalTo("It is Null"))
+                .body("ussd.type", equalTo("3"))
+                .statusCode(200);
+
+
+        return payload;
+
+    }
     public ussd askForInputUSSD(String msisdn, String sessioID, String network, String type, String msg) {
 
 
@@ -115,6 +132,27 @@ public class createUSSDData {
                 .assertThat()
                 .body("ussd.msg", equalTo("Enter your name"))
                 .body("ussd.type", equalTo("2"))
+                .statusCode(200);
+
+
+        return payload;
+
+    }
+    public ussd ussdPlainText(String msisdn, String sessioID, String network, String type, String msg) {
+
+
+        ussd payload = new ussd(msisdn, sessioID, network, type, msg);
+        given()
+                .contentType(ContentType.XML)
+                .log().all()
+                .body(payload)
+                .when()
+                .post(testEndpoints.USSD)
+                .then()
+                .log().all()
+                .assertThat()
+                .body("ussd.msg", equalTo("How are you today"))
+                .body("ussd.type", equalTo("3"))
                 .statusCode(200);
 
 
@@ -184,7 +222,6 @@ public class createUSSDData {
         return payload;
 
     }
-
     public ussd simpleMenuUSSD(String msisdn, String sessioID, String network, String type, String msg) {
 
 
