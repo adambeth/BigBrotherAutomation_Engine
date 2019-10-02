@@ -1,0 +1,89 @@
+package ussdGTBankTests.ussdDataOptionThree;
+
+import baseTest.baseUSSD;
+import io.restassured.http.ContentType;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import requestLibaryUSSD.ussd;
+import testUtilities.EndPoints.testEndpoints;
+import testUtilities.ussd.createUSSDData;
+
+import java.util.UUID;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
+
+public class selectDataPurchaseForSelfTest extends baseUSSD {
+
+    @DataProvider(name = "ussdData", parallel = true)
+    public Object[] createUSSDTestData() {
+
+        return new String[][]{
+
+                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", "*737#", "3", "1", "1"},
+                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", "*737#", "3", "1", "2"},
+                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", "*737#", "3", "1", "3"},
+                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", "*737#", "3", "1", "4"},
+                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", "*737#", "3", "1", "5"},
+                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", "*737#", "3", "1", "6"},
+        };
+    }
+
+    @Test(dataProvider = "ussdData")
+    public void selectDataPurchaseForSelfTest(String msisdn, String sessionID, String network, String type, String msg, String dataOption, String msgPurchaseSelf, String dataSelection) {
+
+        createUSSDData x = new createUSSDData();
+        ussd payLoad;
+        payLoad = x.getUSSDPayload(msisdn, sessionID, network, type, msg);
+        payLoad.setMsg(dataOption);
+        // baseUSSDRequest.setMsg("3");
+        given()
+                .contentType(ContentType.XML)
+                .log().all()
+                .body(payLoad)
+                .when()
+                .post(testEndpoints.USSD)
+                .then()
+                .log().all()
+                .statusCode(200)
+                .assertThat()
+                .body("ussd.msg", containsString("Purchase Data for:"))
+                .body("ussd.msg", containsString("1. Self"))
+                .body("ussd.msg", containsString("2. 3rd Party"))
+                .body("ussd.type", equalTo("2"));
+
+
+        payLoad.setMsg(msgPurchaseSelf);
+        given()
+                .contentType(ContentType.XML)
+                .log().all()
+                .body(payLoad)
+                .when()
+                .post(testEndpoints.USSD)
+                .then()
+                .log().all()
+                .assertThat()
+                .body("ussd.msg", containsString("1. 1GB 30days N1000"))
+                .body("ussd.msg", containsString("2. 2.5GB 30days N2000"))
+                .body("ussd.msg", containsString("3. 40MB 1day N100"))
+                .body("ussd.msg", containsString("4. 150MB 7days N200"))
+                .body("ussd.msg", containsString("5. 1.5GB 30days N1200"))
+                .body("ussd.msg", containsString("6. 11GB 30days N8000"))
+                .body("ussd.type", equalTo("2"))
+                .statusCode(200);
+
+
+        payLoad.setMsg(dataSelection);
+        given()
+                .contentType(ContentType.XML)
+                .log().all()
+                .body(payLoad)
+                .when()
+                .post(testEndpoints.USSD)
+                .then()
+                .log().all()
+                .statusCode(200);
+
+    }
+}
