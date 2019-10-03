@@ -20,11 +20,11 @@ public class ussdDisplayTextTest extends baseUSSD {
         String message = "DisplayText/PlainText";
         return new String[][]{
 
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "a"},
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "b"},
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "c"},
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "d"},
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "e"},
+                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message},
+                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message},
+                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message},
+                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message},
+                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message},
 
 
 
@@ -32,24 +32,11 @@ public class ussdDisplayTextTest extends baseUSSD {
     }
 
     @Test(dataProvider = "ussdDisplayTextData")
-    public void ussdSimpleMenu(String msisdn, String sessionID, String network, String type, String msg, String name) {
+    public void ussdSimpleMenu(String msisdn, String sessionID, String network, String type, String msg) {
         createUSSDData x = new createUSSDData();
         ussd payLoad;
-        payLoad = x.displayTextInputUSSD(msisdn, sessionID, network, type, msg);
-        payLoad.setMsg(name);
+        payLoad = x.ussdPlainText(msisdn, sessionID, network, type, msg);
 
-        given()
-                .contentType(ContentType.XML)
-                .body(payLoad)
-                .when()
-                .log().all()
-                .post(testEndpoints.USSD)
-                .then()
-                .log().all()
-                .assertThat()
-                .body("ussd.msg", equalTo("Welcome " + name))
-                .body("ussd.type",equalTo("3"))
-                .statusCode(200);
 
     }
 

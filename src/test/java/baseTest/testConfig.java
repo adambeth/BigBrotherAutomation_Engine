@@ -20,7 +20,7 @@ public class testConfig {
     public void setUp() {
         String className = this.getClass().getSimpleName();
 
-        RestAssured.proxy("localhost",8888);
+//        RestAssured.proxy("localhost",8888);
         ussd_POST = new RequestSpecBuilder().
                 setBaseUri("http://docker-minion01.dev.za01.payd.co").
                 setPort(31905).

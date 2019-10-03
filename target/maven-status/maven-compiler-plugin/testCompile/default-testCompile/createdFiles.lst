@@ -1,4 +1,3 @@
-inputTextTests\askForInputTest.class
 ussdGTBankTests\AirtimeOthersOptionTwo\ussdAirtimeOthersTest.class
 isEmptyTests\isEmptySimpleNullTest.class
 baseTest\baseUSSD.class
