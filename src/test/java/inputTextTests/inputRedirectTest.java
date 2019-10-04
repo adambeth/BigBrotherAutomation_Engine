@@ -43,7 +43,7 @@ public class inputRedirectTest extends baseUSSD {
     public void askForInputRedirectTest(String message, String type, String network, String respType, String respMsg, String name) {
         //Step 2 variable
         String msg2 = "You have been redirected";
-        String network2 = "3"
+        String type2 = "3"
 ;
 
 
@@ -61,7 +61,7 @@ public class inputRedirectTest extends baseUSSD {
                 .log().all()
                 .assertThat()
                 .body("ussd.msg", equalTo(msg2))
-                .body("ussd.type",equalTo(network2))
+                .body("ussd.type",equalTo(type2))
                 .statusCode(200);
     }
 }

@@ -5,8 +5,10 @@ import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import requestLibaryUSSD.ussd;
+import requestLibaryUSSD.ussdGeneric;
 import testUtilities.EndPoints.testEndpoints;
 import testUtilities.ussd.createUSSDData;
+import testUtilities.ussd.ussdGenericProvider;
 
 import java.util.UUID;
 
@@ -17,13 +19,17 @@ public class uddsInputSensitiveTest extends baseUSSD {
     @DataProvider(name = "ussdSensitiveTextData", parallel = true)
     public Object[] createUSSDTestData() {
         String message = "AskForInput/SensitiveText";
+        String respType = "2";
+        String respMsg = "Enter your name";
+        String name = "Adam";
         return new String[][]{
 
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "nameone"},
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "nametwo"},
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "namethree"},
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "namefour"},
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "namefive"},
+                {message,"1","1",respType,respMsg,name},
+                {message,"1","1",respType,respMsg,name},
+                {message,"1","1",respType,respMsg,name},
+                {message,"1","1",respType,respMsg,name},
+                {message,"1","1",respType,respMsg,name},
+
 
 
         };
@@ -31,10 +37,14 @@ public class uddsInputSensitiveTest extends baseUSSD {
 
 
     @Test(dataProvider = "ussdSensitiveTextData")
-    public void askForInputTest(String msisdn, String sessioID, String network, String type, String msg,String name){
-        createUSSDData x = new createUSSDData();
-        ussd payLoad;
-        payLoad = x.askForInputSensitiveUSSD(msisdn,sessioID,network,type,msg);
+    public void askForInputTest(String message, String type, String network, String respType, String respMsg, String name){
+        //Step 2
+        String msg2 ="Welcome " + name;
+        String type2 ="3";
+
+        ussdGenericProvider x = new ussdGenericProvider();
+        ussdGeneric payLoad;
+        payLoad = x.getGenericUSSD(message,type,network,respType,respMsg);
         payLoad.setMsg(name);
         given()
                 .contentType(ContentType.XML)
@@ -45,7 +55,8 @@ public class uddsInputSensitiveTest extends baseUSSD {
                 .then()
                 .log().all()
                 .assertThat()
-            .body("ussd.msg", equalTo("Welcome " + name))
+                .body("ussd.msg", equalTo(msg2))
+                .body("ussd.type",equalTo(type2))
                 .statusCode(200);
 
 
