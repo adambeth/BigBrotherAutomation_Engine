@@ -4,13 +4,9 @@ import baseTest.baseUSSD;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import requestLibaryUSSD.ussd;
 import requestLibaryUSSD.ussdGeneric;
 import testUtilities.EndPoints.testEndpoints;
-import testUtilities.ussd.createUSSDData;
 import testUtilities.ussd.ussdGenericProvider;
-
-import java.util.UUID;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;

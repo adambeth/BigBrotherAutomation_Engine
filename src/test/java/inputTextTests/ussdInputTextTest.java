@@ -4,11 +4,9 @@ import baseTest.baseUSSD;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import requestLibaryUSSD.ussd;
+import requestLibaryUSSD.ussdGeneric;
 import testUtilities.EndPoints.testEndpoints;
-import testUtilities.ussd.createUSSDData;
-
-import java.util.UUID;
+import testUtilities.ussd.ussdGenericProvider;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -18,13 +16,16 @@ public class ussdInputTextTest extends baseUSSD {
     @DataProvider(name = "ussdInputTextData", parallel = true)
     public Object[] createUSSDTestData() {
         String message = "AskForInput/InputText";
+        String respType = "2";
+        String respMsg = "Enter your name";
+        String name = "CerebroAutomation";
         return new String[][]{
 
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "nameone"},
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "nametwo"},
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "namethree"},
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "namefour"},
-                {getRandomDoubleBetweenRange(), UUID.randomUUID().toString(), "1", "1", message, "namefive"},
+                {message, "1", "1", respType, respMsg, name},
+                {message, "1", "1", respType, respMsg, name},
+                {message, "1", "1", respType, respMsg, name},
+                {message, "1", "1", respType, respMsg, name},
+                {message, "1", "1", respType, respMsg, name},
 
 
         };
@@ -32,10 +33,19 @@ public class ussdInputTextTest extends baseUSSD {
 
 
     @Test(dataProvider = "ussdInputTextData")
-    public void ussdInputTextTest(String msisdn, String sessionID, String network, String type, String msg, String name) {
-        createUSSDData x = new createUSSDData();
-        ussd payLoad;
-        payLoad = x.getUSSDPayloadPlainText(msisdn, sessionID, network, type, msg);
+    public void ussdInputTextTest(String message, String type, String network, String respType, String respMsg, String name) {
+
+
+        //Step 2
+        String msg2 = "Welcome " + name;
+        String network2 = "3";
+
+
+        ussdGenericProvider x = new ussdGenericProvider();
+        ussdGeneric payLoad;
+        payLoad = x.getGenericUSSD(message, type, network, respType, respMsg);
+        payLoad.setMsg(name);
+
         payLoad.setMsg(name);
 
         given()
@@ -47,7 +57,8 @@ public class ussdInputTextTest extends baseUSSD {
                 .then()
                 .log().all()
                 .assertThat()
-                .body("ussd.msg", equalTo("Welcome " + name))
+                .body("ussd.msg", equalTo(msg2))
+                .body("ussd.type", equalTo(network2))
                 .statusCode(200);
 
     }
