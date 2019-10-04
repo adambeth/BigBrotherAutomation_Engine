@@ -1,6 +1,7 @@
 requestLibaryUSSD\ussd.class
 testUtilities\ussd\createUSSDData.class
 testUtilities\EndPoints\testEndpoints.class
+requestLibaryUSSD\ussdGeneric.class
 parameterizedUrlBuilder\getFinancialTermsCalculate.class
 dataProvider\ussdDataProvider.class
 requestLibraryAddNewClients\addNewClients.class
