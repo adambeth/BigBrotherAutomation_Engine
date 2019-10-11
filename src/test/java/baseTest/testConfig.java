@@ -13,7 +13,6 @@ public class testConfig {
     public static RequestSpecification financial_terms_controller;
     public static RequestSpecification ussd_POST;
 
-    public static XmlMapper xmlMapper = new XmlMapper();
 
     @BeforeClass
 
@@ -40,35 +39,6 @@ public class testConfig {
 
     }
 
-    @AfterClass
-    public void generateReport( ){
-//        ITestResult result = null;
-//       // ITestContext contextresults = null;{
-//            try
-//            {
-//                if(result.getStatus() == ITestResult.SUCCESS)
-//                {
-//                    test.info("Test PASSED");
-//                    test.pass("Test Passed");
-//                }
-//                else if(result.getStatus() == ITestResult.FAILURE)
-//                {
-//                    test.info("Test FAILED");
-//                   test.fail("Test Failed");
-//
-//                }
-//                else if(result.getStatus() == ITestResult.SKIP)
-//                { test.info("Test SKIPPED");
-//                   test.skip("SKIPPER");
-//
-//                }
-//            }
-//            catch(Exception e)
-//            {
-//                System.out.println("\nLog Message::@AfterMethod: Exception caught");
-//                e.printStackTrace();
-//            }
-//        extent.flush();
-    }
+
 }
 

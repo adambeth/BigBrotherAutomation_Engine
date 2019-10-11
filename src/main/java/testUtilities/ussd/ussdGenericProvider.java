@@ -2,7 +2,7 @@ package testUtilities.ussd;
 
 import io.restassured.http.ContentType;
 import requestLibaryUSSD.ussdGeneric;
-import testUtilities.EndPoints.testEndpoints;
+import testUtilities.EndPoints.ussdTestEndpoints;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -15,12 +15,12 @@ public class ussdGenericProvider {
 
         given()
                 .contentType(ContentType.XML)
-                .log().all()
+                .log().ifValidationFails()
                 .body(payload)
                 .when()
-                .post(testEndpoints.USSD)
+                .post(ussdTestEndpoints.USSD)
                 .then()
-                .log().all()
+                .log().ifValidationFails()
                 .assertThat()
                 .body("ussd.type",equalTo(resType))
                 .body("ussd.msg",equalTo(resMsg))
