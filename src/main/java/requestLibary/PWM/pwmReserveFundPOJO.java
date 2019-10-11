@@ -1,4 +1,4 @@
-package testUtilities.PWM;
+package requestLibary.PWM;
 
 public class pwmReserveFundPOJO {
     private String authCode;
