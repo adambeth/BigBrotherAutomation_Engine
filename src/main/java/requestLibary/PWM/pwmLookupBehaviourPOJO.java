@@ -1,6 +1,6 @@
 package requestLibary.PWM;
 
-public class pwmLookupBehaviourPOJO{
+public class pwmLookupBehaviourPOJO {
     private String delayMs;
 
     private String reserveTransactionReference;
@@ -22,59 +22,48 @@ public class pwmLookupBehaviourPOJO{
     public pwmLookupBehaviourPOJO() {
     }
 
-    public String getDelayMs ()
-    {
+    public String getDelayMs() {
         return delayMs;
     }
 
-    public void setDelayMs (String delayMs)
-    {
+    public void setDelayMs(String delayMs) {
         this.delayMs = delayMs;
     }
 
-    public String getReserveTransactionReference ()
-    {
+    public String getReserveTransactionReference() {
         return reserveTransactionReference;
     }
 
-    public void setReserveTransactionReference (String reserveTransactionReference)
-    {
+    public void setReserveTransactionReference(String reserveTransactionReference) {
         this.reserveTransactionReference = reserveTransactionReference;
     }
 
-    public String getTargetIdentifier ()
-    {
+    public String getTargetIdentifier() {
         return targetIdentifier;
     }
 
-    public void setTargetIdentifier (String targetIdentifier)
-    {
+    public void setTargetIdentifier(String targetIdentifier) {
         this.targetIdentifier = targetIdentifier;
     }
 
-    public String getSourceIdentifier ()
-    {
+    public String getSourceIdentifier() {
         return sourceIdentifier;
     }
 
-    public void setSourceIdentifier (String sourceIdentifier)
-    {
+    public void setSourceIdentifier(String sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;
     }
 
-    public String getReserveResponseCode ()
-    {
+    public String getReserveResponseCode() {
         return reserveResponseCode;
     }
 
-    public void setReserveResponseCode (String reserveResponseCode)
-    {
+    public void setReserveResponseCode(String reserveResponseCode) {
         this.reserveResponseCode = reserveResponseCode;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [delayMs = "+delayMs+", reserveTransactionReference = "+reserveTransactionReference+", targetIdentifier = "+targetIdentifier+", sourceIdentifier = "+sourceIdentifier+", reserveResponseCode = "+reserveResponseCode+"]";
+    public String toString() {
+        return "ClassPojo [delayMs = " + delayMs + ", reserveTransactionReference = " + reserveTransactionReference + ", targetIdentifier = " + targetIdentifier + ", sourceIdentifier = " + sourceIdentifier + ", reserveResponseCode = " + reserveResponseCode + "]";
     }
 }
