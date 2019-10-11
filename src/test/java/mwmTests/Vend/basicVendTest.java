@@ -24,6 +24,7 @@ public class basicVendTest extends testConfig {
                 {"2019-10-10T12:01:18.362+02:00", "zltvmktsnr8zcsn7iy69kmfs", "2342222225234", "2341111118321", "100", "21", "1111111111111", "005"},
 
 
+
         };
     }
 
