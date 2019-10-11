@@ -1,6 +1,6 @@
 package requestLibary.MWM;
 
-public class mwnVendPOJO {
+public class mwmVendPOJO {
     private String purchaseDate;
 
     private String raasTransactionReference;
@@ -17,7 +17,7 @@ public class mwnVendPOJO {
 
     private String purchaseAmount;
 
-    public mwnVendPOJO(String purchaseDate, String raasTransactionReference, String targetIdentifier, String sourceIdentifier, String productId, String vendorId, String ctxTransactionReference, String purchaseAmount) {
+    public mwmVendPOJO(String purchaseDate, String raasTransactionReference, String targetIdentifier, String sourceIdentifier, String productId, String vendorId, String ctxTransactionReference, String purchaseAmount) {
         this.purchaseDate = purchaseDate;
         this.raasTransactionReference = raasTransactionReference;
         this.targetIdentifier = targetIdentifier;
@@ -28,7 +28,7 @@ public class mwnVendPOJO {
         this.purchaseAmount = purchaseAmount;
     }
 
-    public mwnVendPOJO() {
+    public mwmVendPOJO() {
     }
 
     public String getPurchaseDate() {

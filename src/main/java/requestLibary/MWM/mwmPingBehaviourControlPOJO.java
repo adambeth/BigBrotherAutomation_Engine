@@ -1,13 +1,13 @@
 package requestLibary.MWM;
 
-public class mwnPingBehaviourControlPOJO {
+public class mwmPingBehaviourControlPOJO {
     private String httpStatus;
 
-    public mwnPingBehaviourControlPOJO(String httpStatus) {
+    public mwmPingBehaviourControlPOJO(String httpStatus) {
         this.httpStatus = httpStatus;
     }
 
-    public mwnPingBehaviourControlPOJO() {
+    public mwmPingBehaviourControlPOJO() {
     }
 
     public String getHttpStatus() {

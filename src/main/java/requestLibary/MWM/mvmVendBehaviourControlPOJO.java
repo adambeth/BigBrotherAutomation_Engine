@@ -1,6 +1,6 @@
 package requestLibary.MWM;
 
-public class mvnVendBehaviourControlPOJO {
+public class mvmVendBehaviourControlPOJO {
     private String delayMs;
 
     private String targetIdentifier;
@@ -17,7 +17,7 @@ public class mvnVendBehaviourControlPOJO {
 
     private String ctxSystemResponseCode;
 
-    public mvnVendBehaviourControlPOJO(String delayMs, String targetIdentifier, String ctxTransactionResponseCode, String sourceIdentifier, String vendorResponseCode, String vendorResponseMessage, String vendorTransactionReference, String ctxSystemResponseCode) {
+    public mvmVendBehaviourControlPOJO(String delayMs, String targetIdentifier, String ctxTransactionResponseCode, String sourceIdentifier, String vendorResponseCode, String vendorResponseMessage, String vendorTransactionReference, String ctxSystemResponseCode) {
         this.delayMs = delayMs;
         this.targetIdentifier = targetIdentifier;
         this.ctxTransactionResponseCode = ctxTransactionResponseCode;
@@ -28,7 +28,7 @@ public class mvnVendBehaviourControlPOJO {
         this.ctxSystemResponseCode = ctxSystemResponseCode;
     }
 
-    public mvnVendBehaviourControlPOJO() {
+    public mvmVendBehaviourControlPOJO() {
     }
 
     public String getDelayMs ()
