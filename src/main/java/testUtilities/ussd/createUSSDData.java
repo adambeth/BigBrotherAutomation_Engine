@@ -21,12 +21,12 @@ public class createUSSDData {
         ussd payload = new ussd(msisdn, sessioID, network, type, msg);
         given()
                 .contentType(ContentType.XML)
-                .log().all()
+                .log().ifValidationFails()
                 .body(payload)
                 .when()
                 .post(testEndpoints.USSD)
                 .then()
-                .log().all()
+                .log().ifValidationFails()
                 .statusCode(200)
                 .assertThat();
 
