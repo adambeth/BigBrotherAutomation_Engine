@@ -1,7 +1,7 @@
 package testUtilities.ussd;
 
 import io.restassured.http.ContentType;
-import requestLibaryUSSD.ussdGeneric;
+import requestLibary.USSD.ussdGeneric;
 import testUtilities.EndPoints.ussdTestEndpoints;
 
 import static io.restassured.RestAssured.given;

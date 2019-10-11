@@ -4,7 +4,7 @@ import baseTest.baseUSSD;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import requestLibaryUSSD.ussdGeneric;
+import requestLibary.USSD.ussdGeneric;
 import testUtilities.EndPoints.ussdTestEndpoints;
 import testUtilities.ussd.ussdGenericProvider;
 

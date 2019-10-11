@@ -1,36 +1,44 @@
-package requestLibaryUSSD;
-
-import testUtilities.dataBuilders.msisdnProvider;
+package requestLibary.USSD;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.UUID;
 
 @XmlRootElement(name = "ussd")
-public class ussdGeneric {
 
+public class ussd {
+    //@XmlElement(name = "msisdn")
+    private String msisdn;
+   // @XmlElement(name = "sessinid")
+    private String sessionid;
+  //  @XmlElement(name = "type")
+    private String type;
+  //  @XmlElement(name = "network")
+    private String network;
+ //   @XmlElement(name = "msg")
     private String msg;
 
-    private String sessionid;
 
-    private String msisdn;
 
-    private String type;
-
-    private String network;
-
-    private String respType;
-
-    private String respMessage;
-
-    public ussdGeneric(String msg,String type, String network,String respType,String respMessage) {
-        msisdnProvider x = new msisdnProvider();
-        this.msg = msg;
-        this.sessionid = UUID.randomUUID().toString();
-        this.msisdn = x.getRandomDoubleBetweenRange();
+    public ussd(String msisdn,String type, String network, String msg) {
+        String guid = UUID.randomUUID().toString();
+//        String msisdnRandom =(String) Math.random();
+        this.msisdn = msisdn;
+        this.sessionid = guid;
         this.type = type;
         this.network = network;
-        this.respType = respType;
-        this.respMessage = respMessage;
+        this.msg = msg;
+    }
+
+    public ussd(String msisdn, String sessionID, String type, String network, String msg) {
+
+        this.msisdn = msisdn;
+        this.sessionid = sessionID;
+        this.type = type;
+        this.network = network;
+        this.msg = msg;
+    }
+
+    public ussd() {
     }
 
     public String getMsg ()
@@ -86,9 +94,7 @@ public class ussdGeneric {
     @Override
     public String toString()
     {
-        return "ClassPojo [msg = "+msg+", sessionid = "+sessionid+", msisdn = "+msisdn+", type = "+type+", network = "+network+"]";
-    }
+        return "ClassPojo [msisdn = "+msisdn+", sessionid = "+sessionid+", type = "+type+", network = "+network +"msg = " +msg +"]";
 
-    public ussdGeneric() {
     }
 }

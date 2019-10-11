@@ -3,7 +3,7 @@ package USSDTests.isEmptyTests;
 import baseTest.baseUSSD;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import requestLibaryUSSD.ussd;
+import requestLibary.USSD.ussd;
 import testUtilities.ussd.createUSSDData;
 
 import java.util.UUID;
