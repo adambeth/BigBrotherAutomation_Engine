@@ -20,8 +20,7 @@ public class testConfig {
 
     public static RequestSpecification MWM_Ping_RequestSpec;
     public static RequestSpecification MWM_Vend_RequestSpec;
-
-   public  extentReportBuilder reportBuilder = new extentReportBuilder();
+    public static extentReportBuilder reportBuilder = new extentReportBuilder();
     String reportPath = System.getProperty("user.dir") + "/Reports/USSD_Test_Report.html";
     String documentTitle = "dotControl Automation Test Report";
     String reportName = "USSD Test Report";
@@ -101,15 +100,21 @@ public class testConfig {
 
 
     }
+
+    @BeforeSuite
+    public void startSuiteReport() {
+        reportBuilder.startReport(reportPath, documentTitle, reportName, hostName, environment, user);
+
+    }
+
     @BeforeTest
     public void setExtent(ITestContext iTestContext) {
 
-        reportBuilder.startReport(reportPath, documentTitle, reportName, hostName, environment, user);
-        reportBuilder.logger = reportBuilder.extent.createTest("We want to put the test methof name here");
+
+        reportBuilder.logger = reportBuilder.extent.createTest(iTestContext.getName());
     }
 
-
-    @AfterTest
+    @AfterSuite
     public void endReport() {
         reportBuilder.extent.flush();
     }

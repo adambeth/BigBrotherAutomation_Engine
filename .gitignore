@@ -2,7 +2,7 @@
 # Project exclude paths
 ./.settings
 .settings
-testng.xml
+src/test/resources/IsEmptyTest.xml
 .idea
 Reports
 target
