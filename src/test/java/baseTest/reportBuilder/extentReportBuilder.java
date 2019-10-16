@@ -8,6 +8,7 @@ package baseTest.reportBuilder;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.KlovReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.testng.TestListenerAdapter;
 
@@ -21,6 +22,8 @@ public class extentReportBuilder {
     // Starts report generator
     public void startReport(String reportDirectory, String documentTitle, String reportName, String hostName, String environment, String user) {
         htmlReporter = new ExtentHtmlReporter(reportDirectory);
+        KlovReporter klovReporter = new KlovReporter();
+        extent.attachReporter(htmlReporter,klovReporter);
         // Create an object of Extent Reports
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
