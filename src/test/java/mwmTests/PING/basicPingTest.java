@@ -13,7 +13,7 @@ public class basicPingTest extends testConfig {
     @Test
     public void basicPingTest() {
         String vendorID = "21";
-
+        reportBuilder.logger.pass("Test pass bitches");
         mwmPingPOJO payLoad = new mwmPingPOJO(vendorID);
         given()
                 .spec(MWM_Ping_RequestSpec)

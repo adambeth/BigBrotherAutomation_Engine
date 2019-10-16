@@ -3,10 +3,14 @@ package baseTest;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import org.testng.annotations.BeforeClass;
+import org.testng.ITestContext;
+import org.testng.annotations.*;
+import baseTest.reportBuilder.extentReportBuilder;
 
 public class testConfig {
-
+    /*
+    All .Control Request Specification
+     */
     public static RequestSpecification PWM_ReserveFunds_RequestSpec;
     public static RequestSpecification PWM_ReserveFunds_Behaviour_RequestSpec;
     public static RequestSpecification PWM_Confirmation_RequestSpec;
@@ -16,6 +20,14 @@ public class testConfig {
 
     public static RequestSpecification MWM_Ping_RequestSpec;
     public static RequestSpecification MWM_Vend_RequestSpec;
+
+   public  extentReportBuilder reportBuilder = new extentReportBuilder();
+    String reportPath = System.getProperty("user.dir") + "/Reports/USSD_Test_Report.html";
+    String documentTitle = "dotControl Automation Test Report";
+    String reportName = "USSD Test Report";
+    String hostName = "restAssuredSuite";
+    String environment = "QA";
+    String user = "jc";
 
 
     @BeforeClass
@@ -89,7 +101,18 @@ public class testConfig {
 
 
     }
+    @BeforeTest
+    public void setExtent(ITestContext iTestContext) {
 
+        reportBuilder.startReport(reportPath, documentTitle, reportName, hostName, environment, user);
+        reportBuilder.logger = reportBuilder.extent.createTest("We want to put the test methof name here");
+    }
+
+
+    @AfterTest
+    public void endReport() {
+        reportBuilder.extent.flush();
+    }
 
 }
 
