@@ -15,8 +15,6 @@ public class basicPingTest extends testConfig {
         String vendorID = "21";
 
         mwmPingPOJO payLoad = new mwmPingPOJO(vendorID);
-        System.out.println(payLoad.toString());
-
         given()
                 .spec(MWM_Ping_RequestSpec)
                 .contentType(ContentType.JSON)
