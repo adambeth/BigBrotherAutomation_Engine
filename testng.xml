@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="allSuites" thread-count="3"  parallel="tests">
+    <listeners>
+        <listener class-name="baseTest.reportBuilder.ListenerResults"></listener>
+        <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
+    </listeners>
+    <suite-files>
+        <suite-file path="src/test/resources/IsEmptyTest.xml"></suite-file>
+        <suite-file path="src/test/resources/PingTestsSuite.xml"></suite-file>
+    
+    </suite-files>
+</suite>

@@ -21,12 +21,12 @@ public class testConfig {
     public static RequestSpecification MWM_Ping_RequestSpec;
     public static RequestSpecification MWM_Vend_RequestSpec;
     public static extentReportBuilder reportBuilder = new extentReportBuilder();
-    String reportPath = System.getProperty("user.dir") + "/Reports/USSD_Test_Report.html";
-    String documentTitle = "dotControl Automation Test Report";
-    String reportName = "USSD Test Report";
-    String hostName = "restAssuredSuite";
-    String environment = "QA";
-    String user = "jc";
+//    String reportPath = System.getProperty("user.dir") + "/Reports/USSD_Test_Report.html";
+//    String documentTitle = "dotControl Automation Test Report";
+//    String reportName = "USSD Test Report";
+//    String hostName = "restAssuredSuite";
+//    String environment = "QA";
+//    String user = "jc";
 
 
     @BeforeClass
@@ -101,11 +101,11 @@ public class testConfig {
 
     }
 
-    @BeforeSuite
-    public void startSuiteReport() {
-        reportBuilder.startReport(reportPath, documentTitle, reportName, hostName, environment, user);
-
-    }
+//    @BeforeSuite
+//    public void startSuiteReport() {
+//        reportBuilder.startReport(reportPath, documentTitle, reportName, hostName, environment, user);
+//
+//    }
 
     @BeforeTest
     public void setExtent(ITestContext iTestContext) {
@@ -113,11 +113,11 @@ public class testConfig {
 
         reportBuilder.logger = reportBuilder.extent.createTest(iTestContext.getName());
     }
-
-    @AfterSuite
-    public void endReport() {
-        reportBuilder.extent.flush();
-    }
+//
+//    @AfterSuite
+//    public void endReport() {
+//        reportBuilder.extent.flush();
+//    }
 
 }
 
