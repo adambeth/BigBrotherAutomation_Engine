@@ -1,6 +1,6 @@
 package requestLibary.PWM;
 
-public class pwmConfimrationBehaviourPOJO {
+public class pwmConfirmationBehaviourPOJO {
     private String delayMs;
 
     private String targetIdentifier;
@@ -9,14 +9,14 @@ public class pwmConfimrationBehaviourPOJO {
 
     private String httpStatus;
 
-    public pwmConfimrationBehaviourPOJO(String delayMs, String targetIdentifier, String sourceIdentifier, String httpStatus) {
+    public pwmConfirmationBehaviourPOJO(String delayMs, String targetIdentifier, String sourceIdentifier, String httpStatus) {
         this.delayMs = delayMs;
         this.targetIdentifier = targetIdentifier;
         this.sourceIdentifier = sourceIdentifier;
         this.httpStatus = httpStatus;
     }
 
-    public pwmConfimrationBehaviourPOJO() {
+    public pwmConfirmationBehaviourPOJO() {
     }
 
     public String getDelayMs ()

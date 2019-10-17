@@ -44,7 +44,7 @@ public class testConfig {
                 setContentType(ContentType.JSON).
                 addHeader("Content-Type", "json").
                 build();
-
+//http://docker-minion01.dev.za01.payd.co:31915/fundingsource/confirm
         PWM_Confirmation_RequestSpec = new RequestSpecBuilder().
                 setBaseUri("http://docker-minion01.dev.za01.payd.co").
                 setPort(31915).

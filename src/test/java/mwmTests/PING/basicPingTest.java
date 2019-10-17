@@ -19,6 +19,7 @@ public class basicPingTest extends testConfig {
                 .contentType(ContentType.JSON)
                 .log().ifValidationFails()
                 .body(payLoad)
+                .when()
                 .post()
                 .then()
                 .log().ifValidationFails()
