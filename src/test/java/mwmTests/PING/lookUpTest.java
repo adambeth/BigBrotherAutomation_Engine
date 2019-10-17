@@ -8,7 +8,6 @@ import requestLibary.MWM.mvmLookUpPOJO;
 import requestLibary.MWM.mwmVendPOJO;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.patch;
 import static org.hamcrest.Matchers.equalTo;
 
 public class lookUpTest extends testConfig {

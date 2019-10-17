@@ -34,7 +34,8 @@ public class testConfig {
                 setBasePath("/fundingsource/reserve").
                 setContentType(ContentType.JSON).
                 addHeader("Content-Type", "json").
-                build();
+                addHeader("fundingSourceId","249").
+                build().log().all();
 
         PWM_ReserveFunds_Behaviour_RequestSpec = new RequestSpecBuilder().
                 setBaseUri("http://docker-minion01.dev.za01.payd.co").
