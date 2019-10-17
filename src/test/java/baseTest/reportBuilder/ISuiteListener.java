@@ -11,7 +11,7 @@ public class ISuiteListener extends testConfig implements org.testng.ISuiteListe
     public void onStart(ISuite iSuite) {
         String reportPath = System.getProperty("user.dir") + "/Reports/USSD_Test_Report.html";
         String documentTitle = "dotControl Automation Test Report";
-        String reportName = "USSD Test Report";
+        String reportName = iSuite.getName();
         String hostName = "restAssuredSuite";
         String environment = "QA";
         String user = "jc";

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="Is EmptyTest Suite">
     <listeners>
         <listener class-name="baseTest.reportBuilder.ListenerResults"></listener>
-    <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
+        <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
     </listeners>
     <test verbose="2" preserve-order="true"
           name="is Empty Simple Null Test">
@@ -20,7 +20,7 @@
 
             <class name="USSDTests.isEmptyTests.isEmptySimpleTest">
                 <methods>
-                    <include name="ussdIsEmptySimpleNullTest"/>
+                    <include name="ussd IsEmpty Simple NullTest"/>
                 </methods>
             </class>
         </classes>

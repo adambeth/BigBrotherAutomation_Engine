@@ -10,7 +10,10 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.KlovReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.testng.ITestContext;
 import org.testng.TestListenerAdapter;
+
+import java.util.Date;
 
 public class extentReportBuilder {
 
@@ -18,18 +21,20 @@ public class extentReportBuilder {
     public ExtentReports extent;
     public ExtentTest logger;
     public KlovReporter klovReporter;
+    public Date date;
 
 
     // Starts report generator
     public void startReport(String reportDirectory, String documentTitle, String reportName, String hostName, String environment, String user) {
+        //long time = date.g
         htmlReporter = new ExtentHtmlReporter(reportDirectory);
-         klovReporter = new KlovReporter();
+
+        //Create object of Klov Report for historical reporting
+        klovReporter = new KlovReporter();
 
         klovReporter.initMongoDbConnection("localhost", 27017);
-
-        klovReporter.setProjectName("SWTestAcademy");
-
-        klovReporter.setReportName("2.0");
+        klovReporter.setProjectName("Big Brother Is Watching");
+        klovReporter.setReportName(reportName);
         klovReporter.initKlovServerConnection("http://localhost");
         klovReporter.setKlovUrl("http://localhost");
         // Create an object of Extent Reports

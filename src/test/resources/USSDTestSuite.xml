@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All USSD Test Suite">
+    <listeners>
+        <listener class-name="baseTest.reportBuilder.ListenerResults"></listener>
+        <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="C:/GitHub/BigBrotherAutomation/bigbrotherautomation/src/test/java/USSDTests">
+        <classes>
+            <class name="USSDTests.inputTextTests.inputRedirectTest">
+                <methods>
+                    <include name="askForInputRedirectTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.inputTextTests.uddsInputSensitiveTest">
+                <methods>
+                    <include name="askForInputTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.inputTextTests.ussdDisplayPlainTextTest">
+                <methods>
+                    <include name="askForInputTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.inputTextTests.ussdInputTextTest">
+                <methods>
+                    <include name="ussdInputTextTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.isEmptyTests.isEmptySimpleNullTest">
+                <methods>
+                    <include name="ussdIsEmptySimpleNullTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.isEmptyTests.isEmptySimpleTest">
+                <methods>
+                    <include name="ussdIsEmptySimpleNullTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.isNullTests.isNotNullTest">
+                <methods>
+                    <include name="IsNull_SimpleTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.isNullTests.isNullPositiveTest">
+                <methods>
+                    <include name="IsNull_SimpleTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdDateFormatTests.ussdDateFormatSimpleTest">
+                <methods>
+                    <include name="IsNull_SimpleTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdDisplayTextTests.ussdDisplayTextTest">
+                <methods>
+                    <include name="ussdSimpleMenu"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdGTBankTests.AirtimeOthersOptionTwo.ussdAirtimeOthersTest">
+                <methods>
+                    <include name="startSession"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdGTBankTests.ussdAirtimeSelf.ussdTestAirtimeSelfTest">
+                <methods>
+                    <include name="startSession"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdGTBankTests.ussdCardlessTests.ussdCardless">
+                <methods>
+                    <include name="selectCardlessTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdGTBankTests.ussdCreatePin.createPinTestActivateDebitCardTest">
+                <methods>
+                    <include name="createPinTestActivateDebitCardTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdGTBankTests.ussdCreatePin.createPinTestActivateNOCardTest">
+                <methods>
+                    <include name="createPinTestActivateDebitCardTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdGTBankTests.ussdDataOptionThree.selectDataPurchaseForSelfTest">
+                <methods>
+                    <include name="selectDataPurchaseForSelfTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdGTBankTests.ussdTRSFGTBank">
+                <methods>
+                    <include name="ussdTrsfGTBankTest"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdGTBankTests.ussdTrsfOthers.ussdTrsfOthers">
+                <methods>
+                    <include name="ussdTrsfOthersTests"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdMenuTests.simpleMenuTest">
+                <methods>
+                    <include name="ussdSimpleMenu"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdMenuTests.ussdMenuWithKeyWordsTestOptionsOne">
+                <methods>
+                    <include name="testUsingKeyWordsMenuItemOne"/>
+                </methods>
+            </class>
+            <class name="USSDTests.ussdMenuTests.ussdMenuWithKeyWordsTestOptionsTwo">
+                <methods>
+                    <include name="testUsingKeyWordsMenuItemTwo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
