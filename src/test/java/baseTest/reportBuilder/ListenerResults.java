@@ -45,7 +45,8 @@ public class ListenerResults extends testConfig implements ITestListener {
     }
 
     @Override
-    public void onFinish(ITestContext iTestContext) {
+    public void onFinish(ITestContext iTestContext){
+//        reportBuilder.extent.flush();
 
     }
 }

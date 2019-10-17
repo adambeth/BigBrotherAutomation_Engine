@@ -124,6 +124,7 @@
                         </property>
                     </properties>
                     <suiteXmlFiles>
+                        <suiteXmlFile>C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\PWMReserveFundsTestSuite.xml</suiteXmlFile>
                         <suiteXmlFile>C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\PingTestsSuite.xml</suiteXmlFile>
                         <suiteXmlFile>C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\IsEmptyTest.xml</suiteXmlFile>
                         <suiteXmlFile>C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\USSDTestSuite.xml</suiteXmlFile>
