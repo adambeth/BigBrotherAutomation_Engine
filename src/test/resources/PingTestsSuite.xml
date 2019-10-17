@@ -15,4 +15,13 @@
             </class>
         </classes>
     </test>
+    <test name="Ping LookUp Test" verbose="2" preserve-order="true">
+        <classes>
+            <class name="mwmTests.PING.lookUpTest">
+                <methods>
+                    <include name="simpleVendTestLookUp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>

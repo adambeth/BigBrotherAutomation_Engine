@@ -20,14 +20,8 @@ public class testConfig {
 
     public static RequestSpecification MWM_Ping_RequestSpec;
     public static RequestSpecification MWM_Vend_RequestSpec;
+    public static RequestSpecification MWM_VendLookUp_RequestSpec;
     public static extentReportBuilder reportBuilder = new extentReportBuilder();
-//    String reportPath = System.getProperty("user.dir") + "/Reports/USSD_Test_Report.html";
-//    String documentTitle = "dotControl Automation Test Report";
-//    String reportName = "USSD Test Report";
-//    String hostName = "restAssuredSuite";
-//    String environment = "QA";
-//    String user = "jc";
-
 
     @BeforeClass
 
@@ -98,14 +92,18 @@ public class testConfig {
                 addHeader("Content-Type", "json").
                 build();
 
+        MWM_VendLookUp_RequestSpec = new RequestSpecBuilder().
+                setBaseUri("http://docker-minion01.dev.za01.payd.co").
+                setPort(31910).
+                setBasePath("/vendor/lookup").
+                setContentType(ContentType.JSON).
+                addHeader("Content-Type", "json").
+                build();
+
 
     }
 
-//    @BeforeSuite
-//    public void startSuiteReport() {
-//        reportBuilder.startReport(reportPath, documentTitle, reportName, hostName, environment, user);
-//
-//    }
+
 
     @BeforeTest
     public void setExtent(ITestContext iTestContext) {
@@ -113,11 +111,6 @@ public class testConfig {
 
         reportBuilder.logger = reportBuilder.extent.createTest(iTestContext.getName());
     }
-//
-//    @AfterSuite
-//    public void endReport() {
-//        reportBuilder.extent.flush();
-//    }
 
 }
 
