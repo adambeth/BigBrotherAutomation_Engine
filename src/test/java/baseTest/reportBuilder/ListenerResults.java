@@ -1,6 +1,7 @@
 package baseTest.reportBuilder;
 
 import baseTest.testConfig;
+import com.aventstack.extentreports.reporter.KlovReporter;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -25,6 +26,9 @@ public class ListenerResults extends testConfig implements ITestListener {
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         reportBuilder.logger.fail(iTestResult.getMethod().getMethodName() + " has failed");
+        reportBuilder.logger.fail(iTestResult.getThrowable());
+
+
 
     }
 
