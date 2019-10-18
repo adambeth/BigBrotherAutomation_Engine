@@ -7,17 +7,17 @@ import testUtilities.authentication.keyCloakProvider;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class getAllClientTest extends testConfig {
+public class getAllClientCLIENTTest extends testConfig {
 
     @Test
-    public void test() {
+    public void getallCLIENTS() {
 
         keyCloakProvider keyCloakProvider = new keyCloakProvider();
         String key = keyCloakProvider.getAccessToken();
         String header = "Bearer " + key;
 
         given()
-                .spec(FM_GetClients_Clients)
+                .spec(FM_GetClients_CLIENTS)
                 .header("Authorization", header).log().all()
                 .when().get().then().log().all().assertThat().body("99", equalTo("Automated Testing")).statusCode(200);
 

@@ -24,15 +24,35 @@ public class testConfig {
     public static RequestSpecification MWM_VendLookUp_RequestSpec;
     public static extentReportBuilder reportBuilder = new extentReportBuilder();
 
-    public static RequestSpecification FM_GetClients_Clients;
+    public static RequestSpecification FM_GetClients_CLIENTS;
+    public static RequestSpecification FM_GetClients_VENDORS;
+    public static RequestSpecification FM_GetClients_FUNDINGSOURCES;
 
     @BeforeClass
 
     public void setUp() {
 
-        FM_GetClients_Clients = new RequestSpecBuilder()
+        FM_GetClients_FUNDINGSOURCES = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/management/dev/FUNDING_SOURCE")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
+
+        FM_GetClients_CLIENTS = new RequestSpecBuilder()
                 .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
                 .setBasePath("/management/dev/CLIENT")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
+
+        FM_GetClients_VENDORS = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/management/dev/VENDOR")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
                 .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
