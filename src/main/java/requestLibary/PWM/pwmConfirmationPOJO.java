@@ -1,6 +1,6 @@
 package requestLibary.PWM;
 
-public class pwmConfimrationPOJO {
+public class pwmConfirmationPOJO {
     private String reserveFundsTxnRef;
 
     private String clientTxnRef;
@@ -13,7 +13,7 @@ public class pwmConfimrationPOJO {
 
     private String timestamp;
 
-    public pwmConfimrationPOJO(String reserveFundsTxnRef, String clientTxnRef, String reserveAmount, String raasTxnRef, String responseCode, String timestamp) {
+    public pwmConfirmationPOJO(String reserveFundsTxnRef, String clientTxnRef, String reserveAmount, String raasTxnRef, String responseCode, String timestamp) {
         this.reserveFundsTxnRef = reserveFundsTxnRef;
         this.clientTxnRef = clientTxnRef;
         this.reserveAmount = reserveAmount;
@@ -22,7 +22,7 @@ public class pwmConfimrationPOJO {
         this.timestamp = timestamp;
     }
 
-    public pwmConfimrationPOJO() {
+    public pwmConfirmationPOJO() {
     }
 
     public String getReserveFundsTxnRef() {

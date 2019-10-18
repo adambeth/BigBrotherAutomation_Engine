@@ -4,7 +4,6 @@ import baseTest.testConfig;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.TestListenerAdapter;
 
 public class ListenerResults extends testConfig implements ITestListener {
 
@@ -25,6 +24,9 @@ public class ListenerResults extends testConfig implements ITestListener {
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         reportBuilder.logger.fail(iTestResult.getMethod().getMethodName() + " has failed");
+        reportBuilder.logger.fail(iTestResult.getThrowable());
+
+
 
     }
 
@@ -45,7 +47,8 @@ public class ListenerResults extends testConfig implements ITestListener {
     }
 
     @Override
-    public void onFinish(ITestContext iTestContext) {
+    public void onFinish(ITestContext iTestContext){
+//        reportBuilder.extent.flush();
 
     }
 }

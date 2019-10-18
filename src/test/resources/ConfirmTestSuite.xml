@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Pwm Reserve Funds Test Suite">
+<suite name="Confirm TestSuite">
     <listeners>
         <listener class-name="baseTest.reportBuilder.ListenerResults"></listener>
         <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
     </listeners>
     <test verbose="2" preserve-order="true"
-          name="Simple Reserve PWM">
+          name="Confirm Test">
         <classes>
-            <class name="pwmTest.reserveFundsTest">
+            <class name="pwmTest.Confirm">
                 <methods>
-                    <include name="basicReserveFundTest"/>
+                    <include name="confirmTest"/>
                 </methods>
             </class>
         </classes>

@@ -1,11 +1,13 @@
 package baseTest;
 
+import baseTest.reportBuilder.extentReportBuilder;
+import com.aventstack.extentreports.reporter.KlovReporter;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.testng.ITestContext;
-import org.testng.annotations.*;
-import baseTest.reportBuilder.extentReportBuilder;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 
 public class testConfig {
     /*
@@ -22,6 +24,7 @@ public class testConfig {
     public static RequestSpecification MWM_Vend_RequestSpec;
     public static RequestSpecification MWM_VendLookUp_RequestSpec;
     public static extentReportBuilder reportBuilder = new extentReportBuilder();
+    public static KlovReporter klovReporter = new KlovReporter();
 
     @BeforeClass
 
@@ -51,6 +54,7 @@ public class testConfig {
                 setBasePath("/fundingsource/confirm").
                 setContentType(ContentType.JSON).
                 addHeader("Content-Type", "json").
+                addHeader("fundingSourceId","249").
                 build();
 
         PWM_Confirmation_Behaviour_RequestSpec = new RequestSpecBuilder().
