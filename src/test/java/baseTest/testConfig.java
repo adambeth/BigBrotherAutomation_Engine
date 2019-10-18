@@ -1,7 +1,6 @@
 package baseTest;
 
 import baseTest.reportBuilder.extentReportBuilder;
-import com.aventstack.extentreports.reporter.KlovReporter;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
@@ -24,11 +23,22 @@ public class testConfig {
     public static RequestSpecification MWM_Vend_RequestSpec;
     public static RequestSpecification MWM_VendLookUp_RequestSpec;
     public static extentReportBuilder reportBuilder = new extentReportBuilder();
-    public static KlovReporter klovReporter = new KlovReporter();
+
+    public static RequestSpecification FM_GetClients_Clients;
 
     @BeforeClass
 
     public void setUp() {
+
+        FM_GetClients_Clients = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/management/dev/CLIENT")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
+
 
 
         PWM_ReserveFunds_RequestSpec = new RequestSpecBuilder().
