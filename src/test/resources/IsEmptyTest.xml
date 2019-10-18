@@ -17,7 +17,6 @@
     </test>
     <test name="isEmpty Simple Test">
         <classes>
-
             <class name="USSDTests.isEmptyTests.isEmptySimpleTest">
                 <methods>
                     <include name="ussd IsEmpty Simple NullTest"/>

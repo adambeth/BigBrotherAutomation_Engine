@@ -10,8 +10,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.KlovReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import org.testng.ITestContext;
-import org.testng.TestListenerAdapter;
 
 import java.util.Date;
 
@@ -39,7 +37,7 @@ public class extentReportBuilder {
         klovReporter.setKlovUrl("http://localhost");
         // Create an object of Extent Reports
         extent = new ExtentReports();
-        extent.attachReporter(klovReporter,htmlReporter);
+        extent.attachReporter( htmlReporter);
         extent.setSystemInfo("Host Name", hostName);
         extent.setSystemInfo("Environment", environment);
         extent.setSystemInfo("User Name", user);
