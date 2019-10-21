@@ -32,11 +32,20 @@ public class testConfig {
     public static RequestSpecification FM_GeFlows_FUNDING_SOURCE;
     public static RequestSpecification FM_GeFlowSingle_CLIENTS;
     public static RequestSpecification FM_GeFlowSingle_VENDOR;
+    public static RequestSpecification FM_GeFlowSingle_FUNDING_SOURCE;
 
 
     @BeforeClass
 
     public void setUp() {
+        FM_GeFlowSingle_FUNDING_SOURCE = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/api/dev/FUNDING_SOURCE/249/flows")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
 
         FM_GeFlowSingle_VENDOR = new RequestSpecBuilder()
                 .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
