@@ -2,7 +2,7 @@
 *  The class is robust and should be updated as soon as another datasource (.json) file is added.
 *  This is a once of step as any test can consume the datafactory in order to use data from any given datasource.
 *
-*  Confluence link:
+*  Confluence link: https://confluence.clickatell.com/display/BIG/Data+Layer
 *
 * Author: Juan-Claude Botha
 */
@@ -24,17 +24,6 @@ import java.util.Iterator;
 
 public class testDataFactory
 {
-
-    // get entire json object
-    public static JSONObject vendorObject() throws IOException, ParseException {
-        String vendorJsonFile = ("user.dir") + "/src/main/java/testUtilities/dataBuilders/datasource.json";
-
-        JSONParser parser = new JSONParser();
-        Reader reader = new FileReader(vendorJsonFile);
-        JSONObject vendorJsonData = (JSONObject) parser.parse(reader);
-
-        return vendorJsonData;
-    }
 
     // get json field
     public static String getTransaction(String testsuite, String testscenario, String testfield) throws IOException, ParseException {
