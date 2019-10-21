@@ -27,10 +27,63 @@ public class testConfig {
     public static RequestSpecification FM_GetClients_CLIENTS;
     public static RequestSpecification FM_GetClients_VENDORS;
     public static RequestSpecification FM_GetClients_FUNDINGSOURCES;
+    public static RequestSpecification FM_GeFlows_CLIENTS;
+    public static RequestSpecification FM_GeFlows_VENDORS;
+    public static RequestSpecification FM_GeFlows_FUNDING_SOURCE;
+    public static RequestSpecification FM_GeFlowSingle_CLIENTS;
+    public static RequestSpecification FM_GeFlowSingle_VENDOR;
+
 
     @BeforeClass
 
     public void setUp() {
+
+        FM_GeFlowSingle_VENDOR = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/api/dev/VENDOR/21/flows")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
+
+        FM_GeFlowSingle_CLIENTS = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/api/dev/CLIENT/101/flows")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
+
+
+        FM_GeFlows_FUNDING_SOURCE = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/api/dev/FUNDING_SOURCE/249/flows")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
+
+        FM_GeFlows_VENDORS = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/api/dev/VENDOR/21/flows")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
+
+
+        FM_GeFlows_CLIENTS = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/api/dev/CLIENT/42/flows")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
 
         FM_GetClients_FUNDINGSOURCES = new RequestSpecBuilder()
                 .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
