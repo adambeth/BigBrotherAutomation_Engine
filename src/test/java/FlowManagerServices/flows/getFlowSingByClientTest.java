@@ -17,7 +17,7 @@ public class getFlowSingByClientTest extends testConfig {
         String header = "Bearer " + key;
 
         given()
-                .spec(FM_GeFlowSingle_CLIENTS)
+                .spec(FM_GetFlowSingle_CLIENTS)
                 .header("Authorization", header)
                 .log().ifValidationFails()
                 .when()

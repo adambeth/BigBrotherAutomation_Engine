@@ -27,18 +27,73 @@ public class testConfig {
     public static RequestSpecification FM_GetClients_CLIENTS;
     public static RequestSpecification FM_GetClients_VENDORS;
     public static RequestSpecification FM_GetClients_FUNDINGSOURCES;
-    public static RequestSpecification FM_GeFlows_CLIENTS;
-    public static RequestSpecification FM_GeFlows_VENDORS;
-    public static RequestSpecification FM_GeFlows_FUNDING_SOURCE;
-    public static RequestSpecification FM_GeFlowSingle_CLIENTS;
-    public static RequestSpecification FM_GeFlowSingle_VENDOR;
-    public static RequestSpecification FM_GeFlowSingle_FUNDING_SOURCE;
+    public static RequestSpecification FM_GetFlows_CLIENTS;
+    public static RequestSpecification FM_GetFlows_VENDORS;
+    public static RequestSpecification FM_GetFlows_FUNDING_SOURCE;
+    public static RequestSpecification FM_GetFlowSingle_CLIENTS;
+    public static RequestSpecification FM_GetFlowSingle_VENDOR;
+    public static RequestSpecification FM_GetFlowSingle_FUNDING_SOURCE;
+
+    public static RequestSpecification FM_getChannels_FUNDING_SOURCE;
+    public static RequestSpecification FM_getChannels_CLIENT;
+    public static RequestSpecification FM_getChannels_VENDOR;
+
+    public static RequestSpecification FM_getFlowSteps_CLIENT;
+    public static RequestSpecification FM_getFlowSteps_FUNDINGSOURCE;
+
+
+
+
 
 
     @BeforeClass
 
     public void setUp() {
-        FM_GeFlowSingle_FUNDING_SOURCE = new RequestSpecBuilder()
+        FM_getFlowSteps_FUNDINGSOURCE = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/api/dev/FUNDING_SOURCE/249/steps/")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
+        FM_getFlowSteps_CLIENT = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/api/dev/CLIENT/42/steps/")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
+
+        FM_getChannels_VENDOR = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/api/dev/VENDOR/21/channels")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
+
+
+        FM_getChannels_CLIENT = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/api/dev/CLIENT/42/channels")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
+
+        FM_getChannels_FUNDING_SOURCE = new RequestSpecBuilder()
+                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBasePath("/api/dev/FUNDING_SOURCE/249/channels")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
+        FM_GetFlowSingle_FUNDING_SOURCE = new RequestSpecBuilder()
                 .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/flows")
                 .addHeader("Accept", "*/*")
@@ -47,7 +102,7 @@ public class testConfig {
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
 
-        FM_GeFlowSingle_VENDOR = new RequestSpecBuilder()
+        FM_GetFlowSingle_VENDOR = new RequestSpecBuilder()
                 .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
                 .setBasePath("/api/dev/VENDOR/21/flows")
                 .addHeader("Accept", "*/*")
@@ -56,7 +111,7 @@ public class testConfig {
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
 
-        FM_GeFlowSingle_CLIENTS = new RequestSpecBuilder()
+        FM_GetFlowSingle_CLIENTS = new RequestSpecBuilder()
                 .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
                 .setBasePath("/api/dev/CLIENT/101/flows")
                 .addHeader("Accept", "*/*")
@@ -66,7 +121,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
 
-        FM_GeFlows_FUNDING_SOURCE = new RequestSpecBuilder()
+        FM_GetFlows_FUNDING_SOURCE = new RequestSpecBuilder()
                 .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/flows")
                 .addHeader("Accept", "*/*")
@@ -75,7 +130,7 @@ public class testConfig {
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
 
-        FM_GeFlows_VENDORS = new RequestSpecBuilder()
+        FM_GetFlows_VENDORS = new RequestSpecBuilder()
                 .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
                 .setBasePath("/api/dev/VENDOR/21/flows")
                 .addHeader("Accept", "*/*")
@@ -85,7 +140,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
 
-        FM_GeFlows_CLIENTS = new RequestSpecBuilder()
+        FM_GetFlows_CLIENTS = new RequestSpecBuilder()
                 .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
                 .setBasePath("/api/dev/CLIENT/42/flows")
                 .addHeader("Accept", "*/*")

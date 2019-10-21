@@ -1,4 +1,4 @@
-package FlowManagerServices.flows;
+package FlowManagerServices.channels;
 
 import baseTest.testConfig;
 import org.testng.annotations.Test;
@@ -6,30 +6,28 @@ import testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
 
-public class getFlowByCLIENTTest extends testConfig {
 
+public class getAllChannelsFUNDINGSOURCETest extends testConfig {
 
     @Test
-    public void getFlowsbyClient() {
+    public void getAllChannelsFUNDINGSOURCESTest() {
 
         keyCloakProvider keyCloakProvider = new keyCloakProvider();
         String key = keyCloakProvider.getAccessToken();
         String header = "Bearer " + key;
 
         given()
-                .spec(FM_GetFlows_CLIENTS)
+                .spec(FM_getChannels_FUNDING_SOURCE)
                 .header("Authorization", header)
-                .log().ifValidationFails()
+                .log().all()
                 .when()
                 .get()
                 .then()
-                .log().ifValidationFails()
-                .assertThat().statusCode(200);
+                .log().all()
+                .assertThat()
+                .statusCode(200);
 
 
     }
-
-
 }
-
 

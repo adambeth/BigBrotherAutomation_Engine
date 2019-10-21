@@ -16,7 +16,7 @@ public class getFlowsByVendorTest extends testConfig {
         String header = "Bearer " + key;
 
         given()
-                .spec(FM_GeFlows_VENDORS)
+                .spec(FM_GetFlows_VENDORS)
                 .header("Authorization", header)
                 .log().ifValidationFails()
                 .when()

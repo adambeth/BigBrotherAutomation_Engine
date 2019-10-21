@@ -6,30 +6,23 @@ import testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
 
-public class getFlowByCLIENTTest extends testConfig {
-
+public class getClientFlowSteps extends testConfig {
 
     @Test
-    public void getFlowsbyClient() {
+    public void getClientFlowStepsTest() {
 
         keyCloakProvider keyCloakProvider = new keyCloakProvider();
         String key = keyCloakProvider.getAccessToken();
         String header = "Bearer " + key;
 
         given()
-                .spec(FM_GetFlows_CLIENTS)
+                .spec(FM_getFlowSteps_CLIENT)
                 .header("Authorization", header)
                 .log().ifValidationFails()
                 .when()
-                .get()
+                .get("/access_bank,Access_Account_Opening")
                 .then()
-                .log().ifValidationFails()
+                .log().all()
                 .assertThat().statusCode(200);
-
-
     }
-
-
 }
-
-

@@ -130,6 +130,9 @@
                     </properties>
                     <suiteXmlFiles>
                         <suiteXmlFile>
+                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\getChannlesTestSuite.xml
+                        </suiteXmlFile>
+                        <suiteXmlFile>
                             C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\GetFlowsTestSuite.xml
                         </suiteXmlFile>
                         <suiteXmlFile>

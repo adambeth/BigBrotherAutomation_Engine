@@ -17,7 +17,7 @@ public class getFlowSingleByVENDOR extends testConfig {
         String header = "Bearer " + key;
 
         given()
-                .spec(FM_GeFlowSingle_VENDOR)
+                .spec(FM_GetFlowSingle_VENDOR)
                 .header("Authorization", header)
                 .log().ifValidationFails()
                 .when()

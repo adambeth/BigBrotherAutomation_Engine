@@ -6,6 +6,26 @@
         <listener class-name="baseTest.reportBuilder.ListenerResults"></listener>
         <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
     </listeners>
+    <test verbose="2" preserve-order="true"
+          name="getFundingSourceFlowSteps.java">
+        <classes>
+            <class name="FlowManagerServices.flows.getFundingSourceFlowSteps">
+                <methods>
+                    <include name="getFundingSourceFlowStepsTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="getClientFlowSteps.java">
+        <classes>
+            <class name="FlowManagerServices.flows.getClientFlowSteps">
+                <methods>
+                    <include name="getClientFlowStepsTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
     <test verbose="2" preserve-order="true"
           name="Get Flows Single By FUNDINGSOURCE">

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ChannelTests">
+    <listeners>
+        <listener class-name="baseTest.reportBuilder.ListenerResults"></listener>
+        <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="C:/GitHub/BigBrotherAutomation/bigbrotherautomation/src/test/java/FlowManagerServices/channels/getAllChannelsFUNDINGSOURCETest.java">
+        <classes>
+            <class name="FlowManagerServices.channels.getAllChannelsFUNDINGSOURCETest">
+                <methods>
+                    <include name="getAllChannelsFUNDINGSOURCESTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true"
+          name="getChannelFUNDINGSOURCEDefault">
+        <classes>
+            <class name="FlowManagerServices.channels.getChannelFUNDINGSOURCEDefault">
+                <methods>
+                    <include name="getDefaultChannelsFUNDINGSOURCESTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="get All Channels CLIENT">
+        <classes>
+            <class name="FlowManagerServices.channels.getAllChannelsCLIENT">
+                <methods>
+                    <include name="getALLChannelsbyClient"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/GitHub/BigBrotherAutomation/bigbrotherautomation/src/test/java/FlowManagerServices/channels/getChannelsByIdCLIENTS.java">
+        <classes>
+            <class name="FlowManagerServices.channels.getChannelsByIdCLIENTS">
+                <methods>
+                    <include name="getChannelsByIDClientsUSSDTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="get All Channels VENDORTest">
+        <classes>
+            <class name="FlowManagerServices.channels.getAllChannelsVENDORTest">
+                <methods>
+                    <include name="getALLChannelsbyVendor"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/GitHub/BigBrotherAutomation/bigbrotherautomation/src/test/java/FlowManagerServices/channels/getUSSDChannelVENDORTest.java">
+        <classes>
+            <class name="FlowManagerServices.channels.getUSSDChannelVENDORTest">
+                <methods>
+                    <include name="getChannelsByIDVENDORUSSDTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

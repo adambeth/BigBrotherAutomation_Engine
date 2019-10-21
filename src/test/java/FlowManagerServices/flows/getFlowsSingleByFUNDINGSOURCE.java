@@ -16,7 +16,7 @@ public class getFlowsSingleByFUNDINGSOURCE extends testConfig {
         String header = "Bearer " + key;
 
         given()
-                .spec(FM_GeFlowSingle_FUNDING_SOURCE)
+                .spec(FM_GetFlowSingle_FUNDING_SOURCE)
                 .header("Authorization", header)
                 .log().ifValidationFails()
                 .when()
