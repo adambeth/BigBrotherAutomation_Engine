@@ -37,7 +37,7 @@ public class extentReportBuilder {
         klovReporter.setKlovUrl("http://localhost");
         // Create an object of Extent Reports
         extent = new ExtentReports();
-        extent.attachReporter( htmlReporter);
+        extent.attachReporter(htmlReporter, klovReporter);
         extent.setSystemInfo("Host Name", hostName);
         extent.setSystemInfo("Environment", environment);
         extent.setSystemInfo("User Name", user);
