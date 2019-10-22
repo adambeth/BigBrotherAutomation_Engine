@@ -4,7 +4,7 @@
 
 
     <test verbose="2" preserve-order="true"
-          name="C:/GitHub/BigBrotherAutomation/bigbrotherautomation/src/test/java/FlowManagerServices/flows/getVENDORFlowName.java">
+          name="get VENDOR FlowName">
         <classes>
             <class name="FlowManagerServices.flows.getVENDORFlowName">
                 <methods>
@@ -14,7 +14,7 @@
         </classes>
     </test>
     <test verbose="2" preserve-order="true"
-          name="C:/GitHub/BigBrotherAutomation/bigbrotherautomation/src/test/java/FlowManagerServices/flows/getClientFlowName.java">
+          name="get Client FlowName">
         <classes>
             <class name="FlowManagerServices.flows.getClientFlowName">
                 <methods>
@@ -24,7 +24,7 @@
         </classes>
     </test>
     <test verbose="2" preserve-order="true"
-          name="getFundingSourceFlowSteps.java">
+          name="get Funding Source Flow Steps">
         <classes>
             <class name="FlowManagerServices.flows.getFundingSourceFlowSteps">
                 <methods>
@@ -34,7 +34,7 @@
         </classes>
     </test>
     <test verbose="2" preserve-order="true"
-          name="getClientFlowSteps.java">
+          name="get Client Flow Steps">
         <classes>
             <class name="FlowManagerServices.flows.getClientFlowSteps">
                 <methods>
