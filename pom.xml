@@ -8,6 +8,18 @@
     <artifactId>bigbrotherAutomation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <profiles>
+        <profile>
+            <id>qa</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <env>qa</env>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
@@ -101,9 +113,19 @@
 
     </dependencies>
 
-
     <build>
-
+        <filters>
+            <filter>src/test/resources/config.${env}.properties</filter>
+        </filters>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>*.properties</include>
+                </includes>
+            </testResource>
+        </testResources>
         <plugins>
             <!-- https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html -->
             <plugin>
@@ -129,16 +151,14 @@
                         </property>
                     </properties>
                     <suiteXmlFiles>
-                        <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\FlowManagerGetClientsSuite.xml
-                        </suiteXmlFile>
-                        <suiteXmlFile>C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\FullRegression.xml</suiteXmlFile>
-                        <suiteXmlFile>C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\ConfirmTestSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\PWMReserveFundsTestSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\PingTestsSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\IsEmptyTest.xml</suiteXmlFile>
-                        <suiteXmlFile>C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\USSDTestSuite.xml</suiteXmlFile>
-                        <suiteXmlFile>C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\MVMTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\resources\FlowManagerGetClientsSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\resources\FullRegression.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\resources\ConfirmTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\resources\PWMReserveFundsTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\resources\PingTestsSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\resources\IsEmptyTest.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\resources\USSDTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\resources\MVMTestSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
