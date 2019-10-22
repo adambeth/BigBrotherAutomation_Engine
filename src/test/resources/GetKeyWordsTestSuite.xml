@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="baseTest.reportBuilder.ListenerResults"></listener>
+        <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="Get Client Keyword Test">
+        <classes>
+            <class name="FlowManagerServices.keywords.getClientKeyWordsTest">
+                <methods>
+                    <include name="getClientKeyWordsTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get FUNDING SOURCE Keyword Test">
+        <classes>
+            <class name="FlowManagerServices.keywords.getFUNDINGSOURCEKeyWordTest">
+                <methods>
+                    <include name="getFUNDINGSOURCEKeyWordTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Vendors Keyword Test">
+        <classes>
+            <class name="FlowManagerServices.keywords.getVENDORKeyWordsTest">
+                <methods>
+                    <include name="getVENDORKeyWordsTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

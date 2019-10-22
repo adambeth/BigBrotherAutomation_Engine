@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="baseTest.reportBuilder.ListenerResults"></listener>
+        <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="C:/GitHub/BigBrotherAutomation/bigbrotherautomation/src/test/java/FlowManagerServices/channels/channelConfigs/getFUNDINGSOURCEChannelConfig.java">
+        <classes>
+            <class name="FlowManagerServices.channels.channelConfigs.getFUNDINGSOURCEChannelConfig">
+                <methods>
+                    <include name="getFUNDINGSOURCEChannelConfig"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/GitHub/BigBrotherAutomation/bigbrotherautomation/src/test/java/FlowManagerServices/channels/channelConfigs/getVENDORWhatsAppChannelConfigTest.java">
+        <classes>
+            <class name="FlowManagerServices.channels.channelConfigs.getVENDORDefaultChannelConfigTest">
+                <methods>
+                    <include name="getVENDORWhatsAppChannelConfigTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/GitHub/BigBrotherAutomation/bigbrotherautomation/src/test/java/FlowManagerServices/channels/channelConfigs/getClientsWhatsAppChannelConfigTest.java">
+        <classes>
+            <class name="FlowManagerServices.channels.channelConfigs.getClientsWhatsAppChannelConfigTest">
+                <methods>
+                    <include name="getClientsWhatsAppChannelConfigTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
