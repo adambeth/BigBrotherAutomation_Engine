@@ -71,6 +71,7 @@ public class testConfig {
                 .addHeader("Host", "control-ui-backend.qa.za01.payd.co")
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
+
         FM_getChannelConfig_VENDOR = new RequestSpecBuilder()
                 .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
                 .setBasePath("/api/dev/VENDOR/21/channelConfig")
