@@ -1,0 +1,16 @@
+stages:
+  - test
+
+test_qa:
+  stage: test
+  tags:
+    - gr-asg
+  image: gitlab1a.prod.eu-west-1.aws.clickatell.com:4567/devops/docker-base-images/maven:master
+  services:
+    - docker:dind
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" $CI_REGISTRY --password-stdin
+  script:
+    - echo "Running tests"
+    - mvn test -P qa
+  when: manual
