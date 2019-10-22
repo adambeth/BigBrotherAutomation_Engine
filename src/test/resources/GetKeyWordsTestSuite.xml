@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Flow Manager Get Client Tests">
+<suite name="All Test Suite">
     <listeners>
         <listener class-name="baseTest.reportBuilder.ListenerResults"></listener>
         <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
     </listeners>
     <test verbose="2" preserve-order="true"
-          name="Get All Client CLIENT Test.java">
+          name="Get Client Keyword Test">
         <classes>
-            <class name="FlowManagerServices.management.getAllClientCLIENTTest">
+            <class name="FlowManagerServices.keywords.getClientKeyWordsTest">
                 <methods>
-                    <include name="getallCLIENTS"/>
+                    <include name="getClientKeyWordsTest"/>
                 </methods>
             </class>
         </classes>
     </test>
-    <test verbose="2" preserve-order="true"
-          name="Get All Clients VENDORTest">
+    <test name="Get FUNDING SOURCE Keyword Test">
         <classes>
-            <class name="FlowManagerServices.management.getAllClientsVENDORTest">
+            <class name="FlowManagerServices.keywords.getFUNDINGSOURCEKeyWordTest">
                 <methods>
-                    <include name="getallCLIENTS"/>
+                    <include name="getFUNDINGSOURCEKeyWordTest"/>
                 </methods>
             </class>
         </classes>
     </test>
-
-    <test verbose="2" preserve-order="true"
-          name="get All Clients FUNDINGSOURCE Test">
+    <test name="Get Vendors Keyword Test">
         <classes>
-            <class name="FlowManagerServices.management.getAllClientsFUNDINGSOURCETest">
+            <class name="FlowManagerServices.keywords.getVENDORKeyWordsTest">
                 <methods>
-                    <include name="getAllFundingSources"/>
+                    <include name="getVENDORKeyWordsTest"/>
                 </methods>
             </class>
         </classes>
