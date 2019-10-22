@@ -1,4 +1,4 @@
-package FlowManagerServices.flows;
+package FlowManagerServices.endpoints;
 
 import baseTest.testConfig;
 import org.testng.annotations.Test;
@@ -6,18 +6,18 @@ import testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
 
-public class getFlowSingleByVENDOR extends testConfig {
-
+public class getFundingSourceEndpoints extends testConfig {
 
     @Test
-    public void getFlowSingByVendorTest() {
+    public void getFUNDINGSOURCEEndpointTest() {
+
 
         keyCloakProvider keyCloakProvider = new keyCloakProvider();
         String key = keyCloakProvider.getAccessToken();
         String header = "Bearer " + key;
-        //todo add validation
+
         given()
-                .spec(FM_GetFlowSingle_VENDOR)
+                .spec(FM_getEndPoints_FUNDINGSOURCE)
                 .header("Authorization", header)
                 .log().ifValidationFails()
                 .when()
@@ -26,6 +26,6 @@ public class getFlowSingleByVENDOR extends testConfig {
                 .log().ifValidationFails()
                 .assertThat().statusCode(200);
 
-
     }
 }
+

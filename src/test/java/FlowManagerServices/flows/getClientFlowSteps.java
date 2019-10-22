@@ -14,7 +14,7 @@ public class getClientFlowSteps extends testConfig {
         keyCloakProvider keyCloakProvider = new keyCloakProvider();
         String key = keyCloakProvider.getAccessToken();
         String header = "Bearer " + key;
-
+        //todo add validation
         given()
                 .spec(FM_getFlowSteps_CLIENT)
                 .header("Authorization", header)
