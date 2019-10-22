@@ -21,7 +21,6 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>4.1.1</version>
-            <!--            <scope>test</scope>-->
         </dependency>
         <dependency>
             <groupId>com.aventstack</groupId>
@@ -129,42 +128,42 @@
                         </property>
                     </properties>
                     <suiteXmlFiles>
+                        <!--                        <suiteXmlFile>-->
+                        <!--                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\getChannlesTestSuite.xml-->
+                        <!--                        </suiteXmlFile>-->
+                        <!--                        <suiteXmlFile>-->
+                        <!--                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\GetFlowsTestSuite.xml-->
+                        <!--                        </suiteXmlFile>-->
+                        <!--                        <suiteXmlFile>-->
+                        <!--                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\FlowManagerGetClientsSuite.xml-->
+                        <!--                        </suiteXmlFile>-->
+                        <!--                        <suiteXmlFile>-->
+                        <!--                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\FullRegression.xml-->
+                        <!--                        </suiteXmlFile>-->
                         <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\getChannlesTestSuite.xml
+                            src\test\resources\ConfirmTestSuite.xml
                         </suiteXmlFile>
                         <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\GetFlowsTestSuite.xml
+                            src\test\resources\PWMReserveFundsTestSuite.xml
                         </suiteXmlFile>
                         <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\FlowManagerGetClientsSuite.xml
+                            src\test\resources\PingTestsSuite.xml
                         </suiteXmlFile>
                         <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\FullRegression.xml
+                            src\test\resources\IsEmptyTest.xml
                         </suiteXmlFile>
                         <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\ConfirmTestSuite.xml
+                            src\test\resources\USSDTestSuite.xml
                         </suiteXmlFile>
                         <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\PWMReserveFundsTestSuite.xml
+                            src\test\resources\MVMTestSuite.xml
                         </suiteXmlFile>
                         <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\PingTestsSuite.xml
+                            src\test\resources\GetKeyWordsTestSuite.xml
                         </suiteXmlFile>
-                        <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\IsEmptyTest.xml
-                        </suiteXmlFile>
-                        <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\USSDTestSuite.xml
-                        </suiteXmlFile>
-                        <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\MVMTestSuite.xml
-                        </suiteXmlFile>
-                        <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\GetKeyWordsTestSuite.xml
-                        </suiteXmlFile>
-                        <suiteXmlFile>
-                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\ChannelConfigTestsSuite.xml
-                        </suiteXmlFile>
+                        <!--                        <suiteXmlFile>-->
+                        <!--                            C:\GitHub\BigBrotherAutomation\bigbrotherautomation\src\test\resources\ChannelConfigTestsSuite.xml-->
+                        <!--                        </suiteXmlFile>-->
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
