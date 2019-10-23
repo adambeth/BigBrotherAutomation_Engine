@@ -28,16 +28,16 @@ public class extentReportBuilder {
         htmlReporter = new ExtentHtmlReporter(reportDirectory);
 
         //Create object of Klov Report for historical reporting
-        klovReporter = new KlovReporter();
-
-        klovReporter.initMongoDbConnection("localhost", 27017);
-        klovReporter.setProjectName("Big Brother Is Watching");
-        klovReporter.setReportName(reportName);
-        klovReporter.initKlovServerConnection("http://localhost");
-        klovReporter.setKlovUrl("http://localhost");
+//        klovReporter = new KlovReporter();
+//
+//        klovReporter.initMongoDbConnection("localhost", 27017);
+//        klovReporter.setProjectName("Big Brother Is Watching");
+//        klovReporter.setReportName(reportName);
+//        klovReporter.initKlovServerConnection("http://localhost");
+//        klovReporter.setKlovUrl("http://localhost");
         // Create an object of Extent Reports
         extent = new ExtentReports();
-        extent.attachReporter(htmlReporter, klovReporter);
+        extent.attachReporter(htmlReporter);
         extent.setSystemInfo("Host Name", hostName);
         extent.setSystemInfo("Environment", environment);
         extent.setSystemInfo("User Name", user);
