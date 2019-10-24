@@ -26,7 +26,9 @@ public class getClientsWhatsAppChannelConfigTest extends testConfig {
                 .then()
                 .log().ifValidationFails()
                 .assertThat()
-                .body("channel-name", equalTo("WhatsApp")).statusCode(200);
+                .body("channel-name", equalTo("WhatsApp"))
+                .body("channel-id",equalTo(8))
+                .statusCode(200);
 
 
     }

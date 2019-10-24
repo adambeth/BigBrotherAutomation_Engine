@@ -25,6 +25,7 @@ public class getVENDORDefaultChannelConfigTest extends testConfig {
                 .then()
                 .log().ifValidationFails()
                 .assertThat()
+                .body("channel-id",equalTo(0))
                 .body("channel-name", equalTo("DEFAULT")).statusCode(200);
 
 

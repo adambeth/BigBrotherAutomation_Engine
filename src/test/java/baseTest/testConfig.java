@@ -1,6 +1,7 @@
 package baseTest;
 
 import baseTest.reportBuilder.extentReportBuilder;
+import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
@@ -66,6 +67,8 @@ public class testConfig {
     @BeforeClass
     public void setUp() {
         Properties properties = loadPropertiesFile("config.properties");
+
+        RestAssured.proxy("localhost",8888);
 
         FM_getChannelConfig_FUNDINGSOURCE = new RequestSpecBuilder()
                 .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
