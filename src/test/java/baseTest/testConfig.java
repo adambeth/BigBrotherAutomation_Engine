@@ -68,7 +68,7 @@ public class testConfig {
     public void setUp() {
         Properties properties = loadPropertiesFile("config.properties");
 
-        RestAssured.proxy("localhost",8888);
+//        RestAssured.proxy("localhost",8888);
 
         FM_getChannelConfig_FUNDINGSOURCE = new RequestSpecBuilder()
                 .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
