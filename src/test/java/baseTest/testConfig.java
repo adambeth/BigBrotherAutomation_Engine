@@ -365,7 +365,7 @@ public class testConfig {
                 build();
 
         MWM_Vend_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("MWM_Vend_RequestSpec_BaseUri")).
+                setBaseUri(properties.getProperty("QA_MINION")).
                 setPort(Integer.parseInt(properties.getProperty("MWM_Vend_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("MWM_Vend_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -373,7 +373,7 @@ public class testConfig {
                 build();
 
         MWM_VendLookUp_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("MWM_VendLookUp_RequestSpec_BaseUri")).
+                setBaseUri(properties.getProperty("QA_MINION")).
                 setPort(Integer.parseInt(properties.getProperty("MWM_VendLookUp_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("MWM_VendLookUp_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
