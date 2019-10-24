@@ -18,6 +18,24 @@
                 <env>qa</env>
             </properties>
         </profile>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <env>dev</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>uat</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <env>uat</env>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
