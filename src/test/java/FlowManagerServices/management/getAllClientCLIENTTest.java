@@ -1,6 +1,7 @@
 package FlowManagerServices.management;
 
 import baseTest.testConfig;
+import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import testUtilities.authentication.keyCloakProvider;
 
@@ -18,6 +19,7 @@ public class getAllClientCLIENTTest extends testConfig {
 
         given()
                 .spec(FM_GetClients_CLIENTS)
+                .contentType(ContentType.JSON)
                 .header("Authorization", header).log().all()
                 .when().get().then().log().all().assertThat().body("99", equalTo("Automated Testing")).statusCode(200);
 

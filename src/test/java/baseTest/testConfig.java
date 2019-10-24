@@ -68,7 +68,7 @@ public class testConfig {
         Properties properties = loadPropertiesFile("config.properties");
 
         FM_getChannelConfig_FUNDINGSOURCE = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/channelConfig")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -77,7 +77,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getChannelConfig_VENDOR = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/VENDOR/21/channelConfig")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -86,7 +86,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getChannelConfig_CLIENT = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/CLIENT/42/channelConfig")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -96,7 +96,7 @@ public class testConfig {
 
 
         FM_getKeyWords_FUNDINGSOURCE = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/keyword/8")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -105,7 +105,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getKeyWords_VENDOR = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/VENDOR/21/keyword/8")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -113,7 +113,7 @@ public class testConfig {
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
         FM_getKeyWords_CLIENT = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/CLIENT/42/keyword/8")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -123,7 +123,7 @@ public class testConfig {
 
 
         FM_getFlowName_FUNDINGSOURCE = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/flow")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -132,7 +132,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getFlowName_VENDOR = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/VENDOR/21/flow")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -141,7 +141,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getFlowName_CLIENT = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/CLIENT/42/flow")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -150,7 +150,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getEndPoints_FUNDINGSOURCE = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/endpoints")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -160,7 +160,7 @@ public class testConfig {
 
 
         FM_getEndPoints_VENDOR = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/VENDOR/21/endpoints")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -169,7 +169,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getEndPoints_CLIENT = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/CLIENT/42/endpoints")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -179,7 +179,7 @@ public class testConfig {
 
 
         FM_getFlowSteps_FUNDINGSOURCE = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/steps/")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -187,7 +187,7 @@ public class testConfig {
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
         FM_getFlowSteps_CLIENT = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/CLIENT/42/steps/")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -196,7 +196,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getChannels_VENDOR = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/VENDOR/21/channels")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -206,7 +206,7 @@ public class testConfig {
 
 
         FM_getChannels_CLIENT = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/CLIENT/42/channels")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -215,7 +215,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getChannels_FUNDING_SOURCE = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/channels")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -223,7 +223,7 @@ public class testConfig {
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
         FM_GetFlowSingle_FUNDING_SOURCE = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/flows")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -232,7 +232,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_GetFlowSingle_VENDOR = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/VENDOR/21/flows")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -241,7 +241,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_GetFlowSingle_CLIENTS = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/CLIENT/101/flows")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -251,7 +251,7 @@ public class testConfig {
 
 
         FM_GetFlows_FUNDING_SOURCE = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/flows")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -260,7 +260,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_GetFlows_VENDORS = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/VENDOR/21/flows")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -270,7 +270,7 @@ public class testConfig {
 
 
         FM_GetFlows_CLIENTS = new RequestSpecBuilder()
-                .setBaseUri("http://control-ui-backend.qa.za01.payd.co")
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath("/api/dev/CLIENT/42/flows")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -279,35 +279,35 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_GetClients_FUNDINGSOURCES = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("FM_GetClients_FUNDINGSOURCES_BaseUri"))
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath(properties.getProperty("FM_GetClients_FUNDINGSOURCES_BasePath"))
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
-                .addHeader("Host", properties.getProperty("FM_GetClients_FUNDINGSOURCES_Host"))
+//                .addHeader("Host", properties.getProperty("FM_GetClients_FUNDINGSOURCES_Host"))
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
 
         FM_GetClients_CLIENTS = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("FM_GetClients_CLIENTS_BaseUri"))
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath(properties.getProperty("FM_GetClients_CLIENTS_BasePath"))
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
-                .addHeader("Host", properties.getProperty("FM_GetClients_CLIENTS_Host"))
+//                .addHeader("Host", properties.getProperty("FM_GetClients_CLIENTS_Host"))
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
 
         FM_GetClients_VENDORS = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("FM_GetClients_VENDORS_BaseUri"))
+                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
                 .setBasePath(properties.getProperty("FM_GetClients_VENDORS_BasePath"))
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
-                .addHeader("Host", properties.getProperty("FM_GetClients_VENDORS_Host"))
-                .addHeader("Accept-Encoding", "Accept-Encoding")
+//                .addHeader("Host", properties.getProperty("QA_Refresh_BackEnd"))
+                .addHeader("Accept-Encoding", "gzip, deflate")
                 .addHeader("Connection", "keep-alive").build();
 
 
         PWM_ReserveFunds_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("PWM_ReserveFunds_RequestSpec_BaseUri")).
+                setBaseUri(properties.getProperty("QA_MINION")).
                 setPort(Integer.parseInt(properties.getProperty("PWM_ReserveFunds_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("PWM_ReserveFunds_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -316,7 +316,7 @@ public class testConfig {
                 build().log().all();
 
         PWM_ReserveFunds_Behaviour_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("PWM_ReserveFunds_Behaviour_RequestSpec_BaseUri")).
+                setBaseUri(properties.getProperty("QA_MINION")).
                 setPort(Integer.parseInt(properties.getProperty("PWM_ReserveFunds_Behaviour_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("PWM_ReserveFunds_Behaviour_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -324,7 +324,7 @@ public class testConfig {
                 build();
 
         PWM_Confirmation_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("PWM_Confirmation_RequestSpec_BaseUri")).
+                setBaseUri(properties.getProperty("QA_MINION")).
                 setPort(Integer.parseInt(properties.getProperty("PWM_Confirmation_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("PWM_Confirmation_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -333,7 +333,7 @@ public class testConfig {
                 build();
 
         PWM_Confirmation_Behaviour_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("PWM_Confirmation_Behaviour_RequestSpec_BaseUri")).
+                setBaseUri(properties.getProperty("QA_MINION")).
                 setPort(Integer.parseInt(properties.getProperty("PWM_Confirmation_Behaviour_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("PWM_Confirmation_Behaviour_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -341,7 +341,7 @@ public class testConfig {
                 build();
 
         PWM_Lookup_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("PWM_Lookup_RequestSpec_BaseUri")).
+                setBaseUri(properties.getProperty("QA_MINION")).
                 setPort(Integer.parseInt(properties.getProperty("PWM_Lookup_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("PWM_Lookup_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -349,7 +349,7 @@ public class testConfig {
                 build();
 
         PWM_Lookup_Behaviour_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("PWM_Lookup_Behaviour_RequestSpec_BaseUri")).
+                setBaseUri(properties.getProperty("QA_MINION")).
                 setPort(Integer.parseInt(properties.getProperty("PWM_Lookup_Behaviour_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("PWM_Lookup_Behaviour_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -357,7 +357,7 @@ public class testConfig {
                 build();
 
         MWM_Ping_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("MWM_Ping_RequestSpec_BaseUri")).
+                setBaseUri(properties.getProperty("QA_MINION")).
                 setPort(Integer.parseInt(properties.getProperty("MWM_Ping_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("MWM_Ping_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -365,7 +365,7 @@ public class testConfig {
                 build();
 
         MWM_Vend_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("MWM_Vend_RequestSpec_BaseUri")).
+                setBaseUri(properties.getProperty("QA_MINION")).
                 setPort(Integer.parseInt(properties.getProperty("MWM_Vend_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("MWM_Vend_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -373,7 +373,7 @@ public class testConfig {
                 build();
 
         MWM_VendLookUp_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("MWM_VendLookUp_RequestSpec_BaseUri")).
+                setBaseUri(properties.getProperty("QA_MINION")).
                 setPort(Integer.parseInt(properties.getProperty("MWM_VendLookUp_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("MWM_VendLookUp_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
