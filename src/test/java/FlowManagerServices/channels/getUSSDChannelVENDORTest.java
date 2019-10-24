@@ -22,7 +22,7 @@ public class getUSSDChannelVENDORTest extends testConfig {
                 .when()
                 .get("/0")
                 .then()
-                .log().all()
+                .log().ifValidationFails()
                 .assertThat()
                 .body("config.channel-name", equalTo("DEFAULT")).statusCode(200);
 

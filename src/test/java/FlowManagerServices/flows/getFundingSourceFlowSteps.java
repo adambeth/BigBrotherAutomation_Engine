@@ -22,7 +22,7 @@ public class getFundingSourceFlowSteps extends testConfig {
                 .when()
                 .get("/nestedSetBehaviourField")
                 .then()
-                .log().all()
+                .log().ifValidationFails()
                 .assertThat().statusCode(200);
     }
 }

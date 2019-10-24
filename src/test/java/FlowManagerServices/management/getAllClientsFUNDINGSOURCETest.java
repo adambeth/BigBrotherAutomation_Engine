@@ -19,8 +19,8 @@ public class getAllClientsFUNDINGSOURCETest extends testConfig {
 
         given()
                 .spec(FM_GetClients_FUNDINGSOURCES)
-                .header("Authorization", header).log().all()
-                .when().get().then().log().all().assertThat().body("249", equalTo("Test Funding Source PWM")).statusCode(200);
+                .header("Authorization", header).log().ifValidationFails()
+                .when().get().then().log().ifValidationFails().assertThat().body("249", equalTo("Test Funding Source PWM")).statusCode(200);
 
 
     }

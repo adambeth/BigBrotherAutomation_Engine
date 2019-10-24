@@ -20,8 +20,8 @@ public class getAllClientCLIENTTest extends testConfig {
         given()
                 .spec(FM_GetClients_CLIENTS)
                 .contentType(ContentType.JSON)
-                .header("Authorization", header).log().all()
-                .when().get().then().log().all().assertThat().body("99", equalTo("Automated Testing")).statusCode(200);
+                .header("Authorization", header).log().ifValidationFails()
+                .when().get().then().log().ifValidationFails().assertThat().body("99", equalTo("Automated Testing")).statusCode(200);
 
 
     }

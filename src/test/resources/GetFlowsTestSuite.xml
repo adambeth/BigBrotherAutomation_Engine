@@ -68,7 +68,7 @@
         </classes>
     </test>
     <test verbose="2" preserve-order="true"
-          name="get Flow Sing By Client Test">
+          name="get Flow Single By Client Test">
         <classes>
             <class name="FlowManagerServices.flows.getFlowSingByClientTest">
                 <methods>

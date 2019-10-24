@@ -316,7 +316,7 @@ public class testConfig {
                 setContentType(ContentType.JSON).
                 addHeader("Content-Type", "json").
                 addHeader("fundingSourceId", "249").
-                build().log().all();
+                build().log().ifValidationFails();
 
         PWM_ReserveFunds_Behaviour_RequestSpec = new RequestSpecBuilder().
                 setBaseUri(properties.getProperty("QA_MINION")).

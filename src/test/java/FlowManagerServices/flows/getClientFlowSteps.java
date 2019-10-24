@@ -22,9 +22,9 @@ public class getClientFlowSteps extends testConfig {
                 .when()
                 .get("/access_bank,Access_Account_Opening")
                 .then()
-                .log().all()
+                .log().ifValidationFails()
                 .assertThat()
-                .body("[2]",equalTo("step19"))
+
                 .body("[3]",equalTo("step2"))
                 .body("[4]",equalTo("step21"))
                 .body("[5]",equalTo("step3"))
