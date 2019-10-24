@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class getFlowSingleByVENDOR extends testConfig {
 
@@ -15,7 +16,6 @@ public class getFlowSingleByVENDOR extends testConfig {
         keyCloakProvider keyCloakProvider = new keyCloakProvider();
         String key = keyCloakProvider.getAccessToken();
         String header = "Bearer " + key;
-        //todo add validation
         given()
                 .spec(FM_GetFlowSingle_VENDOR)
                 .header("Authorization", header)
@@ -24,7 +24,9 @@ public class getFlowSingleByVENDOR extends testConfig {
                 .get()
                 .then()
                 .log().ifValidationFails()
-                .assertThat().statusCode(200);
+                .assertThat()
+                .body("[0].name",equalTo("nestedSetBehaviourField"))
+                .statusCode(200);
 
 
     }

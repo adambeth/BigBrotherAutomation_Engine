@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class getFUNDINGSOURCEFlowNameTest extends testConfig {
 
@@ -14,7 +15,6 @@ public class getFUNDINGSOURCEFlowNameTest extends testConfig {
         keyCloakProvider keyCloakProvider = new keyCloakProvider();
         String key = keyCloakProvider.getAccessToken();
         String header = "Bearer " + key;
-        //todo add validation
         given()
                 .spec(FM_getFlowName_FUNDINGSOURCE)
                 .header("Authorization", header)
@@ -23,6 +23,9 @@ public class getFUNDINGSOURCEFlowNameTest extends testConfig {
                 .get("/fundingSourceConfirm")
                 .then()
                 .log().ifValidationFails()
-                .assertThat().statusCode(200);
+                .assertThat()
+                .body("start.type",equalTo("start"))
+                .body("step22.action.name",equalTo("SaveHttpStatus"))
+                .statusCode(200);
     }
 }
