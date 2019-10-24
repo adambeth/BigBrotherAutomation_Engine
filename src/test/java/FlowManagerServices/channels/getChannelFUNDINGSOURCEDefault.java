@@ -18,11 +18,11 @@ public class getChannelFUNDINGSOURCEDefault extends testConfig {
         given()
                 .spec(FM_getChannels_FUNDING_SOURCE)
                 .header("Authorization", header)
-                .log().all()
+                .log().ifValidationFails()
                 .when()
                 .get("/0")
                 .then()
-                .log().all()
+                .log().ifValidationFails()
                 .assertThat()
                 .body("config.channel-name", equalTo("DEFAULT"))
                 .statusCode(200);

@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class getFlowsByFUNDINGSOURCETest extends testConfig {
 
@@ -14,9 +15,8 @@ public class getFlowsByFUNDINGSOURCETest extends testConfig {
         keyCloakProvider keyCloakProvider = new keyCloakProvider();
         String key = keyCloakProvider.getAccessToken();
         String header = "Bearer " + key;
-        //todo add validation
         given()
-                .spec(FM_GetFlows_VENDORS)
+                .spec(FM_GetFlows_FUNDING_SOURCE)
                 .header("Authorization", header)
                 .log().ifValidationFails()
                 .when()
@@ -24,6 +24,7 @@ public class getFlowsByFUNDINGSOURCETest extends testConfig {
                 .then()
                 .log().ifValidationFails()
                 .assertThat()
+                .body("[1].name",equalTo("apiBehaviour"))
                 .statusCode(200);
 
 

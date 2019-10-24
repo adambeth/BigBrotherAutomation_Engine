@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class getFlowByCLIENTTest extends testConfig {
 
@@ -15,7 +16,7 @@ public class getFlowByCLIENTTest extends testConfig {
         keyCloakProvider keyCloakProvider = new keyCloakProvider();
         String key = keyCloakProvider.getAccessToken();
         String header = "Bearer " + key;
-        //todo add validation
+
         given()
                 .spec(FM_GetFlows_CLIENTS)
                 .header("Authorization", header)
@@ -24,7 +25,12 @@ public class getFlowByCLIENTTest extends testConfig {
                 .get()
                 .then()
                 .log().ifValidationFails()
-                .assertThat().statusCode(200);
+                .assertThat()
+                .body("[3].name",equalTo("UBA_MAIN_MENU"))
+                .body("[4].name",equalTo("DEV"))
+                .body("[4].children[0].path",equalTo("DEV/TEST/Ask3"))
+                .body("[248].id",equalTo(578))
+                .statusCode(200);
 
 
     }

@@ -5,17 +5,17 @@ import org.testng.annotations.Test;
 import testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class getFlowSingByClientTest extends testConfig {
 
 
     @Test
     public void getFlowSingByClientTest() {
-
+        //TODO Fix vlaidation
         keyCloakProvider keyCloakProvider = new keyCloakProvider();
         String key = keyCloakProvider.getAccessToken();
         String header = "Bearer " + key;
-        //todo add validation
         given()
                 .spec(FM_GetFlowSingle_CLIENTS)
                 .header("Authorization", header)
@@ -24,7 +24,9 @@ public class getFlowSingByClientTest extends testConfig {
                 .get()
                 .then()
                 .log().ifValidationFails()
-                .assertThat().statusCode(200);
+                .assertThat()
+              //  .body("[264].name",equalTo("askForInputTest"))
+                .statusCode(200);
 
 
     }

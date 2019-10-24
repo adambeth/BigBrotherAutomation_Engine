@@ -35,8 +35,8 @@ public class Confirm extends testConfig {
                 .spec(PWM_Confirmation_RequestSpec)
                 .contentType(ContentType.JSON)
                 .body(payload)
-                .log().all()
-                .when().post().then().log().all().statusCode(202);
+                .log().ifValidationFails()
+                .when().post().then().log().ifValidationFails().statusCode(202);
 
 
     }

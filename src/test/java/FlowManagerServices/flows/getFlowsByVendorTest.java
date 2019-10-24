@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class getFlowsByVendorTest extends testConfig {
 
@@ -14,7 +15,6 @@ public class getFlowsByVendorTest extends testConfig {
         keyCloakProvider keyCloakProvider = new keyCloakProvider();
         String key = keyCloakProvider.getAccessToken();
         String header = "Bearer " + key;
-        //todo add validation
         given()
                 .spec(FM_GetFlows_VENDORS)
                 .header("Authorization", header)
@@ -24,6 +24,7 @@ public class getFlowsByVendorTest extends testConfig {
                 .then()
                 .log().ifValidationFails()
                 .assertThat()
+                .body("[1].path",equalTo("vendorPing"))
                 .statusCode(200);
 
 

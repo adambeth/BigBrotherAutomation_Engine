@@ -19,11 +19,11 @@ public class getAllChannelsFUNDINGSOURCETest extends testConfig {
         given()
                 .spec(FM_getChannels_FUNDING_SOURCE)
                 .header("Authorization", header)
-                .log().all()
+                .log().ifValidationFails()
                 .when()
                 .get()
                 .then()
-                .log().all()
+                .log().ifValidationFails()
                 .assertThat()
                 .statusCode(200);
 

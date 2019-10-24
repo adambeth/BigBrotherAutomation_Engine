@@ -26,7 +26,9 @@ public class getFUNDINGSOURCEChannelConfig extends testConfig {
                 .then()
                 .log().ifValidationFails()
                 .assertThat()
-                .body("channel-name", equalTo("DEFAULT")).statusCode(200);
+                .body("channel-name", equalTo("DEFAULT"))
+                .body("channel-id",equalTo(0))
+                .statusCode(200);
 
 
     }

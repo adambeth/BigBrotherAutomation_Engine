@@ -53,7 +53,7 @@ public class lookUpTest extends testConfig {
                 .body(lookUpPayLoad)
                 .post()
                 .then()
-                .log().all()
+                .log().ifValidationFails()
                 .assertThat()
                 .body("raasTransactionReference",equalTo(payLoad.getRaasTransactionReference()))
                 .body("vendorResponseMessage",equalTo("Success"))

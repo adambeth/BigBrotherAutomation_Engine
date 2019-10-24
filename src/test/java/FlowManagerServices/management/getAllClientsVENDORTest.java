@@ -19,8 +19,8 @@ public class getAllClientsVENDORTest extends testConfig {
 
         given()
                 .spec(FM_GetClients_VENDORS)
-                .header("Authorization", header).log().all()
-                .when().get().then().log().all().assertThat().body("21", equalTo("Test_Vendor_NG")).statusCode(200);
+                .header("Authorization", header).log().ifValidationFails()
+                .when().get().then().log().ifValidationFails().assertThat().body("21", equalTo("Test_Vendor_NG")).statusCode(200);
 
 
     }

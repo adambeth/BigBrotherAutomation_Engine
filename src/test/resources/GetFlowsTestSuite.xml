@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-
+    <listeners>
+        <listener class-name="baseTest.reportBuilder.ListenerResults"></listener>
+        <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
+    </listeners>
 
     <test verbose="2" preserve-order="true"
           name="get VENDOR FlowName">
@@ -65,7 +68,7 @@
         </classes>
     </test>
     <test verbose="2" preserve-order="true"
-          name="get Flow Sing By Client Test">
+          name="get Flow Single By Client Test">
         <classes>
             <class name="FlowManagerServices.flows.getFlowSingByClientTest">
                 <methods>
