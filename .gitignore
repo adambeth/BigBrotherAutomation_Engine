@@ -6,3 +6,4 @@ src/test/resources/IsEmptyTest.xml
 .idea
 Reports
 target
+.gitlab-ci.yml
