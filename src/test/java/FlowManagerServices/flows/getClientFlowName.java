@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class getClientFlowName extends testConfig {
 
@@ -15,7 +16,7 @@ public class getClientFlowName extends testConfig {
         keyCloakProvider keyCloakProvider = new keyCloakProvider();
         String key = keyCloakProvider.getAccessToken();
         String header = "Bearer " + key;
-        //todo add validation
+
         given()
                 .spec(FM_getFlowName_CLIENT)
                 .header("Authorization", header)
@@ -24,7 +25,11 @@ public class getClientFlowName extends testConfig {
                 .get("/access_bank,Access_Account_Opening")
                 .then()
                 .log().ifValidationFails()
-                .assertThat().statusCode(200);
+                .assertThat()
+                .body("step1.action.name",equalTo("IsSessionParam1Empty"))
+                .body("step2.menu.menuType",equalTo("menuOption"))
+                .body("step38.menu.menuType",equalTo("displayMenu"))
+                .statusCode(200);
 
 
     }
