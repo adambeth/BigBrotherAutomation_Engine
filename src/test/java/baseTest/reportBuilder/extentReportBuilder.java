@@ -32,27 +32,7 @@ public class extentReportBuilder {
         String reporting = properties.getProperty("REPORTING");
 
 
-        htmlReporter = new ExtentHtmlReporter(reportDirectory);
 
-//        //Create object of Klov Report for historical reporting
-//        klovReporter = new KlovReporter();
-//
-//        klovReporter.initMongoDbConnection("localhost", 27017);
-//        klovReporter.setProjectName("Big Brother Is Watching");
-//        klovReporter.setReportName(reportName);
-//        klovReporter.initKlovServerConnection("http://localhost");
-//        klovReporter.setKlovUrl("http://localhost");
-////         Create an object of Extent Reports
-//        extent = new ExtentReports();
-//        extent.attachReporter(htmlReporter,klovReporter);
-//        extent.setSystemInfo("Host Name", hostName);
-//        extent.setSystemInfo("Environment", environmentName);
-//        extent.setSystemInfo("User Name", user);
-//        htmlReporter.config().setDocumentTitle(documentTitle);
-//        // Name of the report
-//        htmlReporter.config().setReportName(reportName);
-//        // Dark Theme
-//        htmlReporter.config().setTheme(Theme.DARK);
         if (reporting == "true") {
 
             htmlReporter = new ExtentHtmlReporter(reportDirectory);
@@ -79,7 +59,7 @@ public class extentReportBuilder {
         }
         //offline reporting
         else {
-
+            htmlReporter = new ExtentHtmlReporter(reportDirectory);
             extent = new ExtentReports();
             extent.attachReporter(htmlReporter);
             extent.setSystemInfo("Host Name", hostName);
