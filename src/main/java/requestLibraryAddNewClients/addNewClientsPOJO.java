@@ -1,11 +1,11 @@
 package requestLibraryAddNewClients;
 
-public class addNewClients {
+public class addNewClientsPOJO {
     private String clientId;
 
     private String[] channelIds;
 
-    public addNewClients(String clientId, String[] channelIds) {
+    public addNewClientsPOJO(String clientId, String[] channelIds) {
         this.clientId = clientId;
         this.channelIds = channelIds;
     }

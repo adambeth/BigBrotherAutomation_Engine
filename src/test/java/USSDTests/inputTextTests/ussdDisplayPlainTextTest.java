@@ -35,14 +35,12 @@ public class ussdDisplayPlainTextTest extends baseUSSD {
 
     @Test(dataProvider = "askForInputData")
     public void askForInputTest(String message, String type, String network, String respType, String respMsg, String name) {
-        //Step 2
         String msg2 = "Welcome " + name;
         String type2 = "3";
 
         ussdGenericProvider x = new ussdGenericProvider();
         ussdGeneric payLoad;
         payLoad = x.getGenericUSSD(message, type, network, respType, respMsg);
-        payLoad.setMsg(name);
         payLoad.setMsg(name);
         given()
                 .contentType(ContentType.XML)

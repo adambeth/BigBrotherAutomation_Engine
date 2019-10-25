@@ -67,11 +67,12 @@ public class testConfig {
     @BeforeClass
     public void setUp() {
         Properties properties = loadPropertiesFile("config.properties");
+        String qa_refresh_Backend = properties.getProperty("QA_Refresh_BackEnd");
 
-//        RestAssured.proxy("localhost",8888);
+        RestAssured.proxy("localhost",8888);
 
         FM_getChannelConfig_FUNDINGSOURCE = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/channelConfig")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -80,7 +81,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getChannelConfig_VENDOR = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/VENDOR/21/channelConfig")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -89,7 +90,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getChannelConfig_CLIENT = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/CLIENT/42/channelConfig")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -99,7 +100,7 @@ public class testConfig {
 
 
         FM_getKeyWords_FUNDINGSOURCE = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/keyword/8")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -108,7 +109,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getKeyWords_VENDOR = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/VENDOR/21/keyword/8")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -116,7 +117,7 @@ public class testConfig {
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
         FM_getKeyWords_CLIENT = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/CLIENT/42/keyword/8")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -126,7 +127,7 @@ public class testConfig {
 
 
         FM_getFlowName_FUNDINGSOURCE = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/flow")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -135,7 +136,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getFlowName_VENDOR = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/VENDOR/21/flow")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -144,7 +145,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getFlowName_CLIENT = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/CLIENT/42/flow")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -153,7 +154,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getEndPoints_FUNDINGSOURCE = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/endpoints")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -163,7 +164,7 @@ public class testConfig {
 
 
         FM_getEndPoints_VENDOR = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/VENDOR/21/endpoints")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -182,7 +183,7 @@ public class testConfig {
 
 
         FM_getFlowSteps_FUNDINGSOURCE = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/steps/")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -190,7 +191,7 @@ public class testConfig {
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
         FM_getFlowSteps_CLIENT = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/CLIENT/42/steps/")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -199,7 +200,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getChannels_VENDOR = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/VENDOR/21/channels")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -209,7 +210,7 @@ public class testConfig {
 
 
         FM_getChannels_CLIENT = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/CLIENT/42/channels")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -218,7 +219,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_getChannels_FUNDING_SOURCE = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/channels")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -226,7 +227,7 @@ public class testConfig {
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
         FM_GetFlowSingle_FUNDING_SOURCE = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/flows")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -235,7 +236,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_GetFlowSingle_VENDOR = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/VENDOR/21/flows")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -244,7 +245,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_GetFlowSingle_CLIENTS = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/CLIENT/101/flows")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -254,7 +255,7 @@ public class testConfig {
 
 
         FM_GetFlows_FUNDING_SOURCE = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/FUNDING_SOURCE/249/flows")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -263,7 +264,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_GetFlows_VENDORS = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/VENDOR/21/flows")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -273,7 +274,7 @@ public class testConfig {
 
 
         FM_GetFlows_CLIENTS = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath("/api/dev/CLIENT/42/flows")
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -282,7 +283,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_GetClients_FUNDINGSOURCES = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath(properties.getProperty("FM_GetClients_FUNDINGSOURCES_BasePath"))
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -291,7 +292,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_GetClients_CLIENTS = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath(properties.getProperty("FM_GetClients_CLIENTS_BasePath"))
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
@@ -300,7 +301,7 @@ public class testConfig {
                 .addHeader("Connection", "keep-alive").build();
 
         FM_GetClients_VENDORS = new RequestSpecBuilder()
-                .setBaseUri(properties.getProperty("QA_Refresh_BackEnd"))
+                .setBaseUri(qa_refresh_Backend)
                 .setBasePath(properties.getProperty("FM_GetClients_VENDORS_BasePath"))
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
