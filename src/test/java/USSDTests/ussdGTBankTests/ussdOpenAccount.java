@@ -3,7 +3,7 @@
 //import baseTest.baseUSSD;
 //import io.restassured.http.ContentType;
 //import org.testng.annotations.Test;
-//import testUtilities.EndPoints.testEndpoints;
+//import api.testUtilities.EndPoints.testEndpoints;
 //
 //import static io.restassured.RestAssured.given;
 //

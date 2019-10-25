@@ -43,21 +43,14 @@ mvn clean test -P dev
 ```
 
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Built With
 
 * [RestAssured](http://rest-assured.io/) - The web framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Selenium](https://www.seleniumhq.org/) - Webdriver management
 * [Selenide](https://selenide.org/) - Selenium wrapped to handle threads
-* [TestNG](https://testng.org/doc/documentation-main.html) - Selenium wrapped to handle threads
+* [TestNG](https://testng.org/doc/documentation-main.html) - Test Wrapper
+* [klov](https://https://extentreports.com/docs/klov/) - Test Wrapper
 
 ## Contributing
 

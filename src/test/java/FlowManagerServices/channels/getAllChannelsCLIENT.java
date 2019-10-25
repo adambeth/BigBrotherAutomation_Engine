@@ -2,7 +2,7 @@ package FlowManagerServices.channels;
 
 import baseTest.testConfig;
 import org.testng.annotations.Test;
-import testUtilities.authentication.keyCloakProvider;
+import api.testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
 

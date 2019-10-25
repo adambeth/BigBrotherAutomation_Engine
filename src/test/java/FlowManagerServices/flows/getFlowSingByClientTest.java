@@ -2,10 +2,9 @@ package FlowManagerServices.flows;
 
 import baseTest.testConfig;
 import org.testng.annotations.Test;
-import testUtilities.authentication.keyCloakProvider;
+import api.testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 
 public class getFlowSingByClientTest extends testConfig {
 

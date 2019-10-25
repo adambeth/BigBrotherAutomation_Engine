@@ -3,8 +3,8 @@ package USSDTests.ussdDisplayTextTests;
 import baseTest.baseUSSD;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import requestLibary.USSD.ussdGeneric;
-import testUtilities.ussd.ussdGenericProvider;
+import api.requestLibary.USSD.ussdGeneric;
+import api.testUtilities.ussd.ussdGenericProvider;
 
 public class ussdDisplayTextTest extends baseUSSD {
 

@@ -4,9 +4,9 @@ import baseTest.baseUSSD;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import requestLibary.USSD.ussd;
-import testUtilities.EndPoints.ussdTestEndpoints;
-import testUtilities.ussd.createUSSDData;
+import api.requestLibary.USSD.ussd;
+import api.testUtilities.EndPoints.ussdTestEndpoints;
+import api.testUtilities.ussd.createUSSDData;
 
 import java.util.UUID;
 

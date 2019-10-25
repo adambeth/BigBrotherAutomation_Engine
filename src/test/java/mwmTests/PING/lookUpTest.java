@@ -4,8 +4,8 @@ import baseTest.testConfig;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import requestLibary.MWM.mvmLookUpPOJO;
-import requestLibary.MWM.mwmVendPOJO;
+import api.requestLibary.MWM.mvmLookUpPOJO;
+import api.requestLibary.MWM.mwmVendPOJO;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
