@@ -4,9 +4,9 @@ import baseTest.baseUSSD;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import requestLibary.USSD.ussdGeneric;
-import testUtilities.EndPoints.ussdTestEndpoints;
-import testUtilities.ussd.ussdGenericProvider;
+import api.requestLibary.USSD.ussdGeneric;
+import api.testUtilities.EndPoints.ussdTestEndpoints;
+import api.testUtilities.ussd.ussdGenericProvider;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;

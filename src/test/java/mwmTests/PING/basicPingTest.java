@@ -3,7 +3,7 @@ package mwmTests.PING;
 import baseTest.testConfig;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
-import requestLibary.MWM.mwmPingPOJO;
+import api.requestLibary.MWM.mwmPingPOJO;
 
 import static io.restassured.RestAssured.given;
 

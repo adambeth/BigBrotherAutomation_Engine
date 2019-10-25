@@ -3,7 +3,7 @@ package FlowManagerServices.management;
 import baseTest.testConfig;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
-import testUtilities.authentication.keyCloakProvider;
+import api.testUtilities.authentication.keyCloakProvider;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;

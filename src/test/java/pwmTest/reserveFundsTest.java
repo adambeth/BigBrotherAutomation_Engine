@@ -4,7 +4,7 @@ import baseTest.testConfig;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import requestLibary.PWM.pwmReserveFundPOJO;
+import api.requestLibary.PWM.pwmReserveFundPOJO;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
