@@ -68,6 +68,7 @@ public class testConfig {
     public void setUp() {
         Properties properties = loadPropertiesFile("config.properties");
         String qa_refresh_Backend = properties.getProperty("QA_Refresh_BackEnd");
+        String qa_minion = properties.getProperty("QA_MINION");
 
         RestAssured.proxy("localhost",8888);
 
@@ -311,7 +312,7 @@ public class testConfig {
 
 
         PWM_ReserveFunds_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("QA_MINION")).
+                setBaseUri(qa_minion).
                 setPort(Integer.parseInt(properties.getProperty("PWM_ReserveFunds_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("PWM_ReserveFunds_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -320,7 +321,7 @@ public class testConfig {
                 build().log().ifValidationFails();
 
         PWM_ReserveFunds_Behaviour_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("QA_MINION")).
+                setBaseUri(qa_minion).
                 setPort(Integer.parseInt(properties.getProperty("PWM_ReserveFunds_Behaviour_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("PWM_ReserveFunds_Behaviour_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -328,7 +329,7 @@ public class testConfig {
                 build();
 
         PWM_Confirmation_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("QA_MINION")).
+                setBaseUri(qa_minion).
                 setPort(Integer.parseInt(properties.getProperty("PWM_Confirmation_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("PWM_Confirmation_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -337,7 +338,7 @@ public class testConfig {
                 build();
 
         PWM_Confirmation_Behaviour_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("QA_MINION")).
+                setBaseUri(qa_minion).
                 setPort(Integer.parseInt(properties.getProperty("PWM_Confirmation_Behaviour_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("PWM_Confirmation_Behaviour_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -345,7 +346,7 @@ public class testConfig {
                 build();
 
         PWM_Lookup_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("QA_MINION")).
+                setBaseUri(qa_minion).
                 setPort(Integer.parseInt(properties.getProperty("PWM_Lookup_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("PWM_Lookup_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -353,7 +354,7 @@ public class testConfig {
                 build();
 
         PWM_Lookup_Behaviour_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("QA_MINION")).
+                setBaseUri(qa_minion).
                 setPort(Integer.parseInt(properties.getProperty("PWM_Lookup_Behaviour_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("PWM_Lookup_Behaviour_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -361,7 +362,7 @@ public class testConfig {
                 build();
 
         MWM_Ping_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("QA_MINION")).
+                setBaseUri(qa_minion).
                 setPort(Integer.parseInt(properties.getProperty("MWM_Ping_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("MWM_Ping_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -369,7 +370,7 @@ public class testConfig {
                 build();
 
         MWM_Vend_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("QA_MINION")).
+                setBaseUri(qa_minion).
                 setPort(Integer.parseInt(properties.getProperty("MWM_Vend_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("MWM_Vend_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
@@ -377,7 +378,7 @@ public class testConfig {
                 build();
 
         MWM_VendLookUp_RequestSpec = new RequestSpecBuilder().
-                setBaseUri(properties.getProperty("QA_MINION")).
+                setBaseUri(qa_minion).
                 setPort(Integer.parseInt(properties.getProperty("MWM_VendLookUp_RequestSpec_Port"))).
                 setBasePath(properties.getProperty("MWM_VendLookUp_RequestSpec_BasePath")).
                 setContentType(ContentType.JSON).
