@@ -28,36 +28,58 @@ public class extentReportBuilder {
     // Starts report generator
     public void startReport(String reportDirectory, String documentTitle, String reportName, String hostName, String environment, String user) {
         Properties properties = loadPropertiesFile("config.properties");
-        String environmentName=properties.getProperty("ENVIRONMENT");
+        String environmentName = properties.getProperty("ENVIRONMENT");
+        String reporting = properties.getProperty("REPORTING");
 
-        htmlReporter = new ExtentHtmlReporter(reportDirectory);
 
-        //Create object of Klov Report for historical reporting
-//        klovReporter = new KlovReporter();
-//
-//        klovReporter.initMongoDbConnection("localhost", 27017);
-//        klovReporter.setProjectName("Big Brother Is Watching");
-//        klovReporter.setReportName(reportName);
-//        klovReporter.initKlovServerConnection("http://localhost");
-//        klovReporter.setKlovUrl("http://localhost");
-        // Create an object of Extent Reports
-        extent = new ExtentReports();
-        extent.attachReporter(htmlReporter);
-        extent.setSystemInfo("Host Name", hostName);
-        extent.setSystemInfo("Environment", environmentName);
-        extent.setSystemInfo("User Name", user);
-        htmlReporter.config().setDocumentTitle(documentTitle);
-        // Name of the report
-        htmlReporter.config().setReportName(reportName);
-        // Dark Theme
-        htmlReporter.config().setTheme(Theme.DARK);
 
-    }
+        if (reporting == "true") {
+
+            htmlReporter = new ExtentHtmlReporter(reportDirectory);
+
+            //Create object of Klov Report for historical reporting
+            klovReporter = new KlovReporter();
+
+            klovReporter.initMongoDbConnection("localhost", 27017);
+            klovReporter.setProjectName("Big Brother Is Watching");
+            klovReporter.setReportName(reportName);
+            klovReporter.initKlovServerConnection("http://localhost");
+            klovReporter.setKlovUrl("http://localhost");
+//         Create an object of Extent Reports
+            extent = new ExtentReports();
+            extent.attachReporter(htmlReporter,klovReporter);
+            extent.setSystemInfo("Host Name", hostName);
+            extent.setSystemInfo("Environment", environmentName);
+            extent.setSystemInfo("User Name", user);
+            htmlReporter.config().setDocumentTitle(documentTitle);
+            // Name of the report
+            htmlReporter.config().setReportName(reportName);
+            // Dark Theme
+            htmlReporter.config().setTheme(Theme.DARK);
+        }
+        //offline reporting
+        else {
+            htmlReporter = new ExtentHtmlReporter(reportDirectory);
+            extent = new ExtentReports();
+            extent.attachReporter(htmlReporter);
+            extent.setSystemInfo("Host Name", hostName);
+            extent.setSystemInfo("Environment", environmentName);
+            extent.setSystemInfo("User Name", user);
+            htmlReporter.config().setDocumentTitle(documentTitle);
+            // Name of the report
+            htmlReporter.config().setReportName(reportName);
+            // Dark Theme
+            htmlReporter.config().setTheme(Theme.DARK);
+
+
+        }
+  }
 
     public static void main(String[] args) {
         System.out.println(loadPropertiesFile("config.properties"));
     }
-//TODO create class
+
+    //TODO create class
     public static Properties loadPropertiesFile(String filePath) {
         Properties prop = new Properties();
         try {
