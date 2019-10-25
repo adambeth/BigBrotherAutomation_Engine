@@ -7,7 +7,7 @@ import testUtilities.EndPoints.ussdTestEndpoints;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
-
+//todo make all ussd test run with generic ussd
 public class createUSSDData {
     public createUSSDData() {
     }
