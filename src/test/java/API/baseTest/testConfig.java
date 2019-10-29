@@ -1,5 +1,10 @@
+/**
+ * Represent a base test object
+ * All API test should extent this class
+ * Set up all Request in this class
+ * Author: Adam Bethlehem
+ */
 package API.baseTest;
-
 import API.baseTest.reportBuilder.extentReportBuilder;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -14,7 +19,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class testConfig {
-    /*
+    /**
     All .Control Request Specification
      */
     public static RequestSpecification PWM_ReserveFunds_RequestSpec;
@@ -63,14 +68,23 @@ public class testConfig {
     public static RequestSpecification FM_getChannelConfig_VENDOR;
     public static RequestSpecification FM_getChannelConfig_FUNDINGSOURCE;
 
-
+    /**
+     * Runs before the TestNG class
+     * used to read in configs adn set the environments
+     * Author: Adam Bethlehem
+     */
     @BeforeClass
     public void setUp() {
         Properties properties = loadPropertiesFile("config.properties");
         String qa_refresh_Backend = properties.getProperty("QA_Refresh_BackEnd");
         String qa_minion = properties.getProperty("QA_MINION");
 
-        RestAssured.proxy("localhost",8888);
+
+        /**
+         * https://www.telerik.com/fiddler
+         * To capture traffic through a proxy, run fiddler.exe and uncomment the below line
+         */
+        // RestAssured.proxy("localhost",8888);
 
         FM_getChannelConfig_FUNDINGSOURCE = new RequestSpecBuilder()
                 .setBaseUri(qa_refresh_Backend)
@@ -297,7 +311,6 @@ public class testConfig {
                 .setBasePath(properties.getProperty("FM_GetClients_CLIENTS_BasePath"))
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
-//                .addHeader("Host", properties.getProperty("FM_GetClients_CLIENTS_Host"))
                 .addHeader("Accept-Encoding", "Accept-Encoding")
                 .addHeader("Connection", "keep-alive").build();
 
@@ -306,7 +319,6 @@ public class testConfig {
                 .setBasePath(properties.getProperty("FM_GetClients_VENDORS_BasePath"))
                 .addHeader("Accept", "*/*")
                 .addHeader("Cache-Control", "no-cache")
-//                .addHeader("Host", properties.getProperty("QA_Refresh_BackEnd"))
                 .addHeader("Accept-Encoding", "gzip, deflate")
                 .addHeader("Connection", "keep-alive").build();
 
@@ -388,6 +400,10 @@ public class testConfig {
 
     }
 
+    /**
+     * Methods for reading in configs files used to build requests
+     *
+     */
     public static void main(String[] args) {
         System.out.println(loadPropertiesFile("config.properties"));
     }
@@ -407,11 +423,17 @@ public class testConfig {
 
     }
 
+    /**
+     * Methods runs before TestNG @Test methods
+     * Used to retrieve name if test for reporting
+     * @param iTestContext
+     */
     @BeforeTest
     public void setExtent(ITestContext iTestContext) {
 
 
         reportBuilder.logger = reportBuilder.extent.createTest(iTestContext.getName());
+
     }
 
 }

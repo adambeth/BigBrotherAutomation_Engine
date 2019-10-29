@@ -1,3 +1,9 @@
+/**
+ * Implements org.testng.ISuiteListener ti listen to test suite events
+ * Used to build reporting names and descriptions dynamically
+ * Author: Adam Bethlehem
+ */
+
 package API.baseTest.reportBuilder;
 
 import API.baseTest.testConfig;

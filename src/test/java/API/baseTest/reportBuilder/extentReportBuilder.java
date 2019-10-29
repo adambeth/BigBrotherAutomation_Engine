@@ -1,7 +1,9 @@
-/*
+/**
  * The extentReportBuilder class has been created in order to expand on the functionality of the Extent report builder in order to create a more dynamic method to implement reports
  * Author: Juan-Claude Botha
- * */
+ * Supports both online and offline reporting
+ * https://extentreports.com/docs/versions/4/java/klov-reporter.html
+ */
 
 package API.baseTest.reportBuilder;
 
@@ -22,22 +24,23 @@ public class extentReportBuilder {
     public ExtentReports extent;
     public ExtentTest logger;
     public ExtentKlovReporter klovReporter;
-    public Date date;
 
 
-    // Starts report generator
+    /**
+     * Create object of Klov Report for historical reporting
+     * Requires Mongo DB 3.2
+     * Requires klov server jar to be running
+     * Online / Offline flag set in config.properties REPORTING = ${REPORTING}
+     */
     public void startReport(String reportDirectory, String documentTitle, String reportName, String hostName, String environment, String user) {
         Properties properties = loadPropertiesFile("config.properties");
         String environmentName = properties.getProperty("ENVIRONMENT");
         String reporting = properties.getProperty("REPORTING");
 
 
-
         if (reporting == "true") {
 
             htmlReporter = new ExtentHtmlReporter(reportDirectory);
-
-            //Create object of Klov Report for historical reporting
             klovReporter = new ExtentKlovReporter();
 
             klovReporter.initMongoDbConnection("localhost", 27017);
@@ -45,10 +48,10 @@ public class extentReportBuilder {
             klovReporter.setReportName(reportName);
             klovReporter.initKlovServerConnection("http://localhost");
             klovReporter.initKlovServerConnection("http://localhost");
-//            klovReporter.setExtentKlovUrl("http://localhost");
+//        klovReporter.setExtentKlovUrl("http://localhost");
 //         Create an object of Extent Reports
             extent = new ExtentReports();
-            extent.attachReporter(htmlReporter,klovReporter);
+            extent.attachReporter(htmlReporter, klovReporter);
             extent.setSystemInfo("Host Name", hostName);
             extent.setSystemInfo("Environment", environmentName);
             extent.setSystemInfo("User Name", user);
@@ -58,6 +61,7 @@ public class extentReportBuilder {
             // Dark Theme
             htmlReporter.config().setTheme(Theme.DARK);
         }
+
         //offline reporting
         else {
             htmlReporter = new ExtentHtmlReporter(reportDirectory);
@@ -74,7 +78,7 @@ public class extentReportBuilder {
 
 
         }
-  }
+    }
 
     public static void main(String[] args) {
         System.out.println(loadPropertiesFile("config.properties"));

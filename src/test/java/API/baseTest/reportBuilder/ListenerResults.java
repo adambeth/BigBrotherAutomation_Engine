@@ -1,3 +1,10 @@
+/**
+ * Implements org.testng.ITestListener
+ * Handlers what the system does when test outcomes are triggered
+ * Author: Adam Bethlehem
+ */
+
+
 package API.baseTest.reportBuilder;
 
 import API.baseTest.testConfig;
@@ -25,7 +32,6 @@ public class ListenerResults extends testConfig implements ITestListener {
     public void onTestFailure(ITestResult iTestResult) {
         reportBuilder.logger.fail(iTestResult.getMethod().getMethodName() + " has failed");
         reportBuilder.logger.fail(iTestResult.getThrowable());
-
 
 
     }
