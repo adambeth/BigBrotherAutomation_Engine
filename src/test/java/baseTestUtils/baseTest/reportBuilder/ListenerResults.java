@@ -5,9 +5,9 @@
  */
 
 
-package API.baseTest.reportBuilder;
+package baseTestUtils.baseTest.reportBuilder;
 
-import API.baseTest.testConfig;
+import baseTestUtils.baseTest.testConfig;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;

@@ -1,6 +1,6 @@
 package API.mwmTests.PING;
 
-import API.baseTest.testConfig;
+import baseTestUtils.baseTest.testConfig;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import api.requestLibary.MWM.mwmPingPOJO;

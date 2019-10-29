@@ -5,7 +5,7 @@
  * https://extentreports.com/docs/versions/4/java/klov-reporter.html
  */
 
-package API.baseTest.reportBuilder;
+package baseTestUtils.baseTest.reportBuilder;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -15,15 +15,14 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
 import java.util.Properties;
 
 public class extentReportBuilder {
 
     public ExtentHtmlReporter htmlReporter;
-    public ExtentReports extent;
+    public ExtentReports extent = new ExtentReports();
     public ExtentTest logger;
-    public ExtentKlovReporter klovReporter;
+    public ExtentKlovReporter klovReporter  =new ExtentKlovReporter();;
 
 
     /**
@@ -35,22 +34,21 @@ public class extentReportBuilder {
     public void startReport(String reportDirectory, String documentTitle, String reportName, String hostName, String environment, String user) {
         Properties properties = loadPropertiesFile("config.properties");
         String environmentName = properties.getProperty("ENVIRONMENT");
-        String reporting = properties.getProperty("REPORTING");
+       String reporting = properties.getProperty("REPORTING");
+
 
 
         if (reporting == "true") {
 
             htmlReporter = new ExtentHtmlReporter(reportDirectory);
-            klovReporter = new ExtentKlovReporter();
 
             klovReporter.initMongoDbConnection("localhost", 27017);
             klovReporter.setProjectName("Big Brother Is Watching");
             klovReporter.setReportName(reportName);
             klovReporter.initKlovServerConnection("http://localhost");
-            klovReporter.initKlovServerConnection("http://localhost");
-//        klovReporter.setExtentKlovUrl("http://localhost");
-//         Create an object of Extent Reports
-            extent = new ExtentReports();
+  //          klovReporter.initKlovServerConnection("http://localhost");
+//     klovReporter.setExtentKlovUrl("http://localhost");
+
             extent.attachReporter(htmlReporter, klovReporter);
             extent.setSystemInfo("Host Name", hostName);
             extent.setSystemInfo("Environment", environmentName);
@@ -63,9 +61,9 @@ public class extentReportBuilder {
         }
 
         //offline reporting
-        else {
+        else if (reporting =="false"){
             htmlReporter = new ExtentHtmlReporter(reportDirectory);
-            extent = new ExtentReports();
+//            extent = new ExtentReports();
             extent.attachReporter(htmlReporter);
             extent.setSystemInfo("Host Name", hostName);
             extent.setSystemInfo("Environment", environmentName);

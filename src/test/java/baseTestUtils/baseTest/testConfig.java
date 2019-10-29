@@ -4,9 +4,8 @@
  * Set up all Request in this class
  * Author: Adam Bethlehem
  */
-package API.baseTest;
-import API.baseTest.reportBuilder.extentReportBuilder;
-import io.restassured.RestAssured;
+package baseTestUtils.baseTest;
+import baseTestUtils.baseTest.reportBuilder.extentReportBuilder;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
@@ -32,6 +31,7 @@ public class testConfig {
     public static RequestSpecification MWM_Ping_RequestSpec;
     public static RequestSpecification MWM_Vend_RequestSpec;
     public static RequestSpecification MWM_VendLookUp_RequestSpec;
+
     public static extentReportBuilder reportBuilder = new extentReportBuilder();
 
     public static RequestSpecification FM_GetClients_CLIENTS;

@@ -1,6 +1,6 @@
 package API.mwmTests.Vend;
 
-import API.baseTest.testConfig;
+import baseTestUtils.baseTest.testConfig;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

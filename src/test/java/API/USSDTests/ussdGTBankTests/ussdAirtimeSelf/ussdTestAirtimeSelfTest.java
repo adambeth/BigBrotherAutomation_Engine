@@ -1,6 +1,6 @@
 package API.USSDTests.ussdGTBankTests.ussdAirtimeSelf;
 
-import API.baseTest.baseUSSD;
+import baseTestUtils.baseTest.baseUSSD;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

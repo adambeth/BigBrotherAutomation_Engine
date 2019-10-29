@@ -1,6 +1,6 @@
 package API.USSDTests.ussdDateFormatter;
 
-import API.baseTest.baseUSSD;
+import baseTestUtils.baseTest.baseUSSD;
 import org.testng.annotations.DataProvider;
 
 import java.util.UUID;
