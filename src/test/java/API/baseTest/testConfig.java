@@ -1,6 +1,6 @@
-package baseTest;
+package API.baseTest;
 
-import baseTest.reportBuilder.extentReportBuilder;
+import API.baseTest.reportBuilder.extentReportBuilder;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;

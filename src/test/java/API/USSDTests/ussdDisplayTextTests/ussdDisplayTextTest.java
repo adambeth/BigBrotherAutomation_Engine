@@ -1,6 +1,6 @@
-package USSDTests.ussdDisplayTextTests;
+package API.USSDTests.ussdDisplayTextTests;
 
-import baseTest.baseUSSD;
+import API.baseTest.baseUSSD;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import api.requestLibary.USSD.ussdGeneric;

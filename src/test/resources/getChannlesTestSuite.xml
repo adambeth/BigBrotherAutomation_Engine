@@ -2,13 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ChannelTests">
     <listeners>
-        <listener class-name="baseTest.reportBuilder.ListenerResults"></listener>
-        <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
+        <listener class-name="API.baseTest.reportBuilder.ListenerResults"></listener>
+        <listener class-name="API.baseTest.reportBuilder.ISuiteListener"></listener>
     </listeners>
     <test verbose="2" preserve-order="true"
           name="get All Channels FUNDINGSOURCE Test">
         <classes>
-            <class name="FlowManagerServices.channels.getAllChannelsFUNDINGSOURCETest">
+            <class name="API.FlowManagerServices.channels.getAllChannelsFUNDINGSOURCETest">
                 <methods>
                     <include name="getAllChannelsFUNDINGSOURCESTest"/>
                 </methods>
@@ -19,7 +19,7 @@
     <test verbose="2" preserve-order="true"
           name="get Channel FUNDINGSOURCE Default">
         <classes>
-            <class name="FlowManagerServices.channels.getChannelFUNDINGSOURCEDefault">
+            <class name="API.FlowManagerServices.channels.getChannelFUNDINGSOURCEDefault">
                 <methods>
                     <include name="getDefaultChannelsFUNDINGSOURCESTest"/>
                 </methods>
@@ -29,7 +29,7 @@
     <test verbose="2" preserve-order="true"
           name="get All Channels CLIENT">
         <classes>
-            <class name="FlowManagerServices.channels.getAllChannelsCLIENT">
+            <class name="API.FlowManagerServices.channels.getAllChannelsCLIENT">
                 <methods>
                     <include name="getALLChannelsbyClient"/>
                 </methods>
@@ -39,7 +39,7 @@
     <test verbose="2" preserve-order="true"
           name="get Channels By Id CLIENTS">
         <classes>
-            <class name="FlowManagerServices.channels.getChannelsByIdCLIENTS">
+            <class name="API.FlowManagerServices.channels.getChannelsByIdCLIENTS">
                 <methods>
                     <include name="getChannelsByIDClientsUSSDTest"/>
                 </methods>
@@ -49,7 +49,7 @@
     <test verbose="2" preserve-order="true"
           name="get All Channels VENDORTest">
         <classes>
-            <class name="FlowManagerServices.channels.getAllChannelsVENDORTest">
+            <class name="API.FlowManagerServices.channels.getAllChannelsVENDORTest">
                 <methods>
                     <include name="getALLChannelsbyVendor"/>
                 </methods>
@@ -59,7 +59,7 @@
     <test verbose="2" preserve-order="true"
           name="get USSD Channel VENDOR Test">
         <classes>
-            <class name="FlowManagerServices.channels.getUSSDChannelVENDORTest">
+            <class name="API.FlowManagerServices.channels.getUSSDChannelVENDORTest">
                 <methods>
                     <include name="getChannelsByIDVENDORUSSDTest"/>
                 </methods>

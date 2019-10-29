@@ -1,9 +1,8 @@
 package UI;
-import static com.codeborne.selenide.CollectionCondition.size;
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
+
 import org.testng.annotations.Test;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Condition.*;
 
 
 public class TEST1 {
@@ -12,6 +11,6 @@ public class TEST1 {
     public void test1(){
 
 //            open("https://www.google.com");
-        open("https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/3.141.59");
+        open("https://wwww.google.com");
     }
 }

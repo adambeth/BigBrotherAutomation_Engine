@@ -1,6 +1,6 @@
-package USSDTests.ussdGTBankTests.ussdCreatePin;
+package API.USSDTests.ussdGTBankTests.ussdCreatePin;
 
-import baseTest.baseUSSD;
+import API.baseTest.baseUSSD;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

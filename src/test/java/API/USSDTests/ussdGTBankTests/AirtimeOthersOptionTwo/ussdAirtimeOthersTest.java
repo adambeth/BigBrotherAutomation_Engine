@@ -3,9 +3,9 @@
  * Author: Adam Bethlehem
  */
 
-package USSDTests.ussdGTBankTests.AirtimeOthersOptionTwo;
+package API.USSDTests.ussdGTBankTests.AirtimeOthersOptionTwo;
 
-import baseTest.baseUSSD;
+import API.baseTest.baseUSSD;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

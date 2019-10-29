@@ -1,6 +1,6 @@
-package FlowManagerServices.channels.channelConfigs;
+package API.FlowManagerServices.channels.channelConfigs;
 
-import baseTest.testConfig;
+import API.baseTest.testConfig;
 import org.testng.annotations.Test;
 import api.testUtilities.authentication.keyCloakProvider;
 

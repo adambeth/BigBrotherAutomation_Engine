@@ -1,6 +1,6 @@
-package FlowManagerServices.flows;
+package API.FlowManagerServices.flows;
 
-import baseTest.testConfig;
+import API.baseTest.testConfig;
 import org.testng.annotations.Test;
 import api.testUtilities.authentication.keyCloakProvider;
 

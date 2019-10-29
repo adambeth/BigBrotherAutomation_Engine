@@ -1,9 +1,9 @@
 
 //TODO Fix this test for some reason 500 instead of 202
 
-package pwmTest;
+package API.pwmTest;
 
-import baseTest.testConfig;
+import API.baseTest.testConfig;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

@@ -2,113 +2,113 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All USSD GT Bank Test Suite">
     <listeners>
-        <listener class-name="baseTest.reportBuilder.ListenerResults"></listener>
-        <listener class-name="baseTest.reportBuilder.ISuiteListener"></listener>
+        <listener class-name="API.baseTest.reportBuilder.ListenerResults"></listener>
+        <listener class-name="API.baseTest.reportBuilder.ISuiteListener"></listener>
     </listeners>
     <test verbose="2" preserve-order="true"
-          name="GT Banks USSDTests">
+          name="GT Banks API.USSDTests">
         <classes>
-            <class name="USSDTests.inputTextTests.inputRedirectTest">
+            <class name="API.USSDTests.inputTextTests.inputRedirectTest">
                 <methods>
                     <include name="askForInputRedirectTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.inputTextTests.uddsInputSensitiveTest">
+            <class name="API.USSDTests.inputTextTests.uddsInputSensitiveTest">
                 <methods>
                     <include name="askForInputTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.inputTextTests.ussdDisplayPlainTextTest">
+            <class name="API.USSDTests.inputTextTests.ussdDisplayPlainTextTest">
                 <methods>
                     <include name="askForInputTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.inputTextTests.ussdInputTextTest">
+            <class name="API.USSDTests.inputTextTests.ussdInputTextTest">
                 <methods>
                     <include name="ussdInputTextTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.isEmptyTests.isEmptySimpleNullTest">
+            <class name="API.USSDTests.isEmptyTests.isEmptySimpleNullTest">
                 <methods>
                     <include name="ussdIsEmptySimpleNullTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.isEmptyTests.isEmptySimpleTest">
+            <class name="API.USSDTests.isEmptyTests.isEmptySimpleTest">
                 <methods>
                     <include name="ussdIsEmptySimpleNullTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.isNullTests.isNotNullTest">
+            <class name="API.USSDTests.isNullTests.isNotNullTest">
                 <methods>
                     <include name="IsNull_SimpleTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.isNullTests.isNullPositiveTest">
+            <class name="API.USSDTests.isNullTests.isNullPositiveTest">
                 <methods>
                     <include name="IsNull_SimpleTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdDateFormatTests.ussdDateFormatSimpleTest">
+            <class name="API.USSDTests.ussdDateFormatTests.ussdDateFormatSimpleTest">
                 <methods>
                     <include name="IsNull_SimpleTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdDisplayTextTests.ussdDisplayTextTest">
+            <class name="API.USSDTests.ussdDisplayTextTests.ussdDisplayTextTest">
                 <methods>
                     <include name="ussdSimpleMenu"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdGTBankTests.AirtimeOthersOptionTwo.ussdAirtimeOthersTest">
+            <class name="API.USSDTests.ussdGTBankTests.AirtimeOthersOptionTwo.ussdAirtimeOthersTest">
                 <methods>
                     <include name="startSession"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdGTBankTests.ussdAirtimeSelf.ussdTestAirtimeSelfTest">
+            <class name="API.USSDTests.ussdGTBankTests.ussdAirtimeSelf.ussdTestAirtimeSelfTest">
                 <methods>
                     <include name="startSession"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdGTBankTests.ussdCardlessTests.ussdCardless">
+            <class name="API.USSDTests.ussdGTBankTests.ussdCardlessTests.ussdCardless">
                 <methods>
                     <include name="selectCardlessTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdGTBankTests.ussdCreatePin.createPinTestActivateDebitCardTest">
+            <class name="API.USSDTests.ussdGTBankTests.ussdCreatePin.createPinTestActivateDebitCardTest">
                 <methods>
                     <include name="createPinTestActivateDebitCardTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdGTBankTests.ussdCreatePin.createPinTestActivateNOCardTest">
+            <class name="API.USSDTests.ussdGTBankTests.ussdCreatePin.createPinTestActivateNOCardTest">
                 <methods>
                     <include name="createPinTestActivateDebitCardTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdGTBankTests.ussdDataOptionThree.selectDataPurchaseForSelfTest">
+            <class name="API.USSDTests.ussdGTBankTests.ussdDataOptionThree.selectDataPurchaseForSelfTest">
                 <methods>
                     <include name="selectDataPurchaseForSelfTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdGTBankTests.ussdTRSFGTBank">
+            <class name="API.USSDTests.ussdGTBankTests.ussdTRSFGTBank">
                 <methods>
                     <include name="ussdTrsfGTBankTest"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdGTBankTests.ussdTrsfOthers.ussdTrsfOthers">
+            <class name="API.USSDTests.ussdGTBankTests.ussdTrsfOthers.ussdTrsfOthers">
                 <methods>
                     <include name="ussdTrsfOthersTests"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdMenuTests.simpleMenuTest">
+            <class name="API.USSDTests.ussdMenuTests.simpleMenuTest">
                 <methods>
                     <include name="ussdSimpleMenu"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdMenuTests.ussdMenuWithKeyWordsTestOptionsOne">
+            <class name="API.USSDTests.ussdMenuTests.ussdMenuWithKeyWordsTestOptionsOne">
                 <methods>
                     <include name="testUsingKeyWordsMenuItemOne"/>
                 </methods>
             </class>
-            <class name="USSDTests.ussdMenuTests.ussdMenuWithKeyWordsTestOptionsTwo">
+            <class name="API.USSDTests.ussdMenuTests.ussdMenuWithKeyWordsTestOptionsTwo">
                 <methods>
                     <include name="testUsingKeyWordsMenuItemTwo"/>
                 </methods>

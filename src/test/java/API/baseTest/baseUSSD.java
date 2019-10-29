@@ -3,7 +3,7 @@
  * All USSD test start with the same API call to enter into the menu
  * Author: Adam Bethlehem
  */
-package baseTest;
+package API.baseTest;
 
 import java.util.Random;
 

@@ -1,6 +1,6 @@
-//package USSDTests;
+//package API.USSDTests;
 //
-//import baseTest.baseUSSD;
+//import API.baseTest.baseUSSD;
 //import io.restassured.http.ContentType;
 //import org.testng.annotations.Test;
 //import api.testUtilities.EndPoints.testEndpoints;

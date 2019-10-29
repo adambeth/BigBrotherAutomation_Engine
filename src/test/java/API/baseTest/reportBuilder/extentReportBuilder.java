@@ -3,12 +3,12 @@
  * Author: Juan-Claude Botha
  * */
 
-package baseTest.reportBuilder;
+package API.baseTest.reportBuilder;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.KlovReporter;
+import com.aventstack.extentreports.reporter.ExtentKlovReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class extentReportBuilder {
     public ExtentHtmlReporter htmlReporter;
     public ExtentReports extent;
     public ExtentTest logger;
-    public KlovReporter klovReporter;
+    public ExtentKlovReporter klovReporter;
     public Date date;
 
 
@@ -38,13 +38,14 @@ public class extentReportBuilder {
             htmlReporter = new ExtentHtmlReporter(reportDirectory);
 
             //Create object of Klov Report for historical reporting
-            klovReporter = new KlovReporter();
+            klovReporter = new ExtentKlovReporter();
 
             klovReporter.initMongoDbConnection("localhost", 27017);
             klovReporter.setProjectName("Big Brother Is Watching");
             klovReporter.setReportName(reportName);
             klovReporter.initKlovServerConnection("http://localhost");
-            klovReporter.setKlovUrl("http://localhost");
+            klovReporter.initKlovServerConnection("http://localhost");
+//            klovReporter.setExtentKlovUrl("http://localhost");
 //         Create an object of Extent Reports
             extent = new ExtentReports();
             extent.attachReporter(htmlReporter,klovReporter);
