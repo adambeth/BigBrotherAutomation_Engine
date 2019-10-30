@@ -27,12 +27,39 @@ public class sqlDataAccess {
             connection.close();
         }
         catch (Exception e){
-            System.err.println("Got an exception! ");
-            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
 
         return dbValue;
     }
+
+    public static String verifyPostgreCustomSql(String action, String columnName, String condition)
+    {
+        Properties properties = loadPropertiesFile("config.properties");
+        String dbValue = null;
+
+        try {
+            String connectionUrl = properties.getProperty("CONNECTION_URL");
+            Connection connection = DriverManager.getConnection(connectionUrl, properties.getProperty("RAAS_USER"), properties.getProperty("RAAS_PWD"));
+            Statement statement = connection.createStatement();
+            ResultSet resultSet;
+
+            resultSet = statement.executeQuery(action + columnName + condition);
+            while (resultSet.next()){
+                dbValue = resultSet.getString(columnName);
+
+            }
+
+            connection.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return dbValue;
+
+    }
+
 
     public static Properties loadPropertiesFile(String filePath) {
         Properties prop = new Properties();
