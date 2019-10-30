@@ -1,26 +1,30 @@
 package api.testUtilities.sqlDataAccessLayer;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
+import java.util.Properties;
 
 public class sqlDataAccess {
 
-    public static String verifyRaasTransaction(String dataBaseColumn, String columnName, String fieldValue)
+    public static String verifyPostgreDb(String dataBaseTable, String columnName, String operator, String fieldValue)
     {
+        Properties properties = loadPropertiesFile("config.properties");
         String dbValue = null;
 
         try{
-            String connectionUrl = "";
-            Connection conn = DriverManager.getConnection(connectionUrl, "", "");
-            Statement stmt = conn.createStatement();
-            ResultSet rs;
+            String connectionUrl = properties.getProperty("CONNECTION_URL");
+            Connection connection = DriverManager.getConnection(connectionUrl, properties.getProperty("RAAS_USER"), properties.getProperty("RAAS_PWD"));
+            Statement statement = connection.createStatement();
+            ResultSet resultSet;
 
-            StringBuilder query;
-            rs = stmt.executeQuery("SELECT * FROM " + dataBaseColumn + " where " + columnName + " = " + fieldValue + ";");
-            while (rs.next()){
-                dbValue = rs.getString(columnName);
+            resultSet = statement.executeQuery("SELECT * FROM " + dataBaseTable + " WHERE " + columnName + " " + operator + " " + "('" + fieldValue + "')" + ";");
+            while (resultSet.next()){
+                dbValue = resultSet.getString(columnName);
+
             }
 
-            conn.close();
+            connection.close();
         }
         catch (Exception e){
             System.err.println("Got an exception! ");
@@ -28,6 +32,20 @@ public class sqlDataAccess {
         }
 
         return dbValue;
+    }
+
+    public static Properties loadPropertiesFile(String filePath) {
+        Properties prop = new Properties();
+        try {
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            InputStream inputStream = classLoader.getResourceAsStream(filePath);
+            prop.load(inputStream);
+        } catch (IOException e) {
+            System.err.println("Unable to load properties file : " + filePath);
+        }
+
+        return prop;
+
     }
 
 }
