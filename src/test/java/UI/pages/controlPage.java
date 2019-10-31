@@ -7,13 +7,15 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class controlPage extends loginPage {
 
+    By logo = By.xpath("//header[@id='topBar']//span[@class='topBar_logo']");
+
     public controlPage() {
     }
 
     public void topBar() {
 
 
-        $(By.className("topBar_logo")).shouldBe(Condition.visible);
+      $(logo).shouldBe(Condition.visible);
 
     }
 
@@ -33,10 +35,12 @@ public class controlPage extends loginPage {
     }
 
     public void clickRouting(){
-        $(By.id("routes")).click();
+        $(By.xpath("//a[@id='routes']")).click();
     }
     public void clickAPIIntegration(){
 
-        $(By.id("endpoints")).click();
+        $(By.xpath("//a[@id='endpoints']")).click();
     }
+
+
 }
