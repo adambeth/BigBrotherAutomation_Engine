@@ -1,5 +1,8 @@
 package api.requestLibary.MWM;
-
+/**
+ *Ping payload object
+ * Author: Adam Bethlehem
+ */
 public class mwmPingPOJO {
     private String vendorId;
 
