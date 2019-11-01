@@ -1,5 +1,9 @@
 package api.requestLibary.MWM;
-
+/**
+ *Vend Behaviour payload object
+ * This object object is used to set system behaviour on the request
+ * Author: Adam Bethlehem
+ */
 public class mvmVendBehaviourControlPOJO {
     private String delayMs;
 

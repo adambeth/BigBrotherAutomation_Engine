@@ -89,18 +89,17 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
-
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>3.7.0</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
             <version>5.4.1</version>
-            <scope>test</scope>
+
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-remote-driver</artifactId>
+            <version>3.141.59</version>
         </dependency>
 
         <dependency>
@@ -108,22 +107,20 @@
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-support</artifactId>
-            <version>3.8.1</version>
+            <version>3.141.0</version>
         </dependency>
+
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
-            <version>3.14.0</version>
+            <version>3.141.59</version>
         </dependency>
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>5.4.1</version>
-            <scope>compile</scope>
-        </dependency>
+
 
     </dependencies>
 
@@ -165,6 +162,8 @@
                         </property>
                     </properties>
                     <suiteXmlFiles>
+                        <suiteXmlFile>src\test\resources\getChannlesTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\resources\ChannelConfigTestsSuite.xml</suiteXmlFile>
                         <suiteXmlFile>src\test\resources\FlowManagerGetClientsSuite.xml</suiteXmlFile>
                         <suiteXmlFile>src\test\resources\FullRegression.xml</suiteXmlFile>
                         <suiteXmlFile>src\test\resources\ConfirmTestSuite.xml</suiteXmlFile>
@@ -173,6 +172,7 @@
                         <suiteXmlFile>src\test\resources\IsEmptyTest.xml</suiteXmlFile>
                         <suiteXmlFile>src\test\resources\USSDTestSuite.xml</suiteXmlFile>
                         <suiteXmlFile>src\test\resources\MVMTestSuite.xml</suiteXmlFile>
+<!--                        <suiteXmlFile>C:\GitHub\New folder\bigbrotherautomation\testng.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
