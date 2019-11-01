@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Confirm TestSuite">
+<suite name="Confirm TestSuite" thread-count="5" parallel="methods">
     <listeners>
         <listener class-name="baseTestUtils.baseTest.reportBuilder.ListenerResults"></listener>
         <listener class-name="baseTestUtils.baseTest.reportBuilder.ISuiteListener"></listener>

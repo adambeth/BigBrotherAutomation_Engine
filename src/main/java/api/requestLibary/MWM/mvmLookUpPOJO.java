@@ -1,5 +1,8 @@
 package api.requestLibary.MWM;
-
+/**
+ *Lookup payload object
+ * Author: Adam Bethlehem
+ */
 public class mvmLookUpPOJO {
     private String purchaseDate;
 
@@ -16,7 +19,7 @@ public class mvmLookUpPOJO {
     private String ctxTransactionReference;
 
     private String purchaseAmount;
-
+    //constructor
     public mvmLookUpPOJO(String purchaseDate, String raasTransactionReference, String targetIdentifier, String sourceIdentifier, String productId, String vendorId, String ctxTransactionReference, String purchaseAmount) {
         this.purchaseDate = purchaseDate;
         this.raasTransactionReference = raasTransactionReference;

@@ -6,6 +6,8 @@
  */
 package baseTestUtils.baseTest;
 import baseTestUtils.baseTest.reportBuilder.extentReportBuilder;
+
+import com.codeborne.selenide.Configuration;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
@@ -18,9 +20,11 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class testConfig {
+
     /**
     All .Control Request Specification
      */
+
     public static RequestSpecification PWM_ReserveFunds_RequestSpec;
     public static RequestSpecification PWM_ReserveFunds_Behaviour_RequestSpec;
     public static RequestSpecification PWM_Confirmation_RequestSpec;
@@ -78,7 +82,6 @@ public class testConfig {
         Properties properties = loadPropertiesFile("config.properties");
         String qa_refresh_Backend = properties.getProperty("QA_Refresh_BackEnd");
         String qa_minion = properties.getProperty("QA_MINION");
-
 
         /**
          * https://www.telerik.com/fiddler
@@ -432,6 +435,7 @@ public class testConfig {
     public void setExtent(ITestContext iTestContext) {
 
 
+        Configuration.browser="firefox";
         reportBuilder.logger = reportBuilder.extent.createTest(iTestContext.getName());
 
     }

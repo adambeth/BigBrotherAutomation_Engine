@@ -1,5 +1,8 @@
 package api.requestLibary.MWM;
-
+/**
+ *Vend payload object
+ * Author: Adam Bethlehem
+ */
 public class mwmVendPOJO {
     private String purchaseDate;
 

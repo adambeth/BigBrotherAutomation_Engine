@@ -2,6 +2,7 @@ package UI.pages;
 
 
 import baseTestUtils.baseTest.testConfig;
+import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -36,7 +37,6 @@ public class loginPage extends testConfig {
     }
 
     public controlPage successfulLogin(String username, String password){
-
         open(url);
         enterUsername(username);
         enterPassword(password);
