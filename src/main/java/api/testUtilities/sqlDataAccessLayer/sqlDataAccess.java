@@ -1,3 +1,10 @@
+/**
+ *  The sqlDataAccess class is a handler class in order to be able the verify database entries and validate data quality
+ *  Author: Juan-Claude Botha
+ * https://confluence.clickatell.com/display/BIG/Sql+Data+Access+Layer
+ */
+
+
 package api.testUtilities.sqlDataAccessLayer;
 
 import java.io.IOException;
@@ -5,7 +12,7 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
-public class sqlDataAccess {
+public class sqlDataAccess{
 
     public static String verifyPostgreDb(String dataBaseTable, String columnName, String operator, String fieldValue)
     {
@@ -13,12 +20,13 @@ public class sqlDataAccess {
         String dbValue = null;
 
         try{
-            String connectionUrl = properties.getProperty("CONNECTION_URL");
-            Connection connection = DriverManager.getConnection(connectionUrl, properties.getProperty("RAAS_USER"), properties.getProperty("RAAS_PWD"));
+            String connectionUrl = "jdbc:postgresql://pgdb.qa.za01.payd.co:5432/raas";
+            Class.forName("org.postgresql.Driver");
+            Connection connection = DriverManager.getConnection(connectionUrl, "qa_appl_w_readyapi","api_rite" );
             Statement statement = connection.createStatement();
             ResultSet resultSet;
 
-            resultSet = statement.executeQuery("SELECT * FROM " + dataBaseTable + " WHERE " + columnName + " " + operator + " " + "('" + fieldValue + "')" + ";");
+            resultSet = statement.executeQuery("SELECT * FROM " + dataBaseTable + " WHERE " + columnName + " " + operator + " '" + fieldValue + "' LIMIT 1 ;");
             while (resultSet.next()){
                 dbValue = resultSet.getString(columnName);
 
