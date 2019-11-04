@@ -24,7 +24,7 @@ public class testDataFactory
     // get json field
     public static String getTransaction(String testsuite, String testscenario, String testfield) throws IOException, ParseException {
 
-        String vendorJsonFile = System.getProperty("user.dir") + "/src/main/java/api.testUtilities/dataBuilders/datasource.json";
+        String vendorJsonFile = System.getProperty("user.dir") + "/src/main/java/api/testUtilities/dataBuilders/datasource.json";
 
         JSONParser parser = new JSONParser();
         Reader reader = new FileReader(vendorJsonFile);

@@ -73,6 +73,12 @@ public class testConfig {
     public static RequestSpecification FM_getChannelConfig_FUNDINGSOURCE;
 
     /**
+     *  All dotCore test specifications
+     */
+
+    public static RequestSpecification CORE_Transact_V4_RequestSpec;
+
+    /**
      * Runs before the TestNG class
      * used to read in configs adn set the environments
      * Author: Adam Bethlehem
@@ -399,6 +405,21 @@ public class testConfig {
                 setContentType(ContentType.JSON).
                 addHeader("Content-Type", "json").
                 build();
+
+        /**
+         *  dot Core request specs
+         */
+
+        CORE_Transact_V4_RequestSpec = new RequestSpecBuilder().
+                setBaseUri(qa_minion)
+                .setPort(Integer.parseInt(properties.getProperty("CORE_Transact_V4_RequestSpec_Port")))
+                .setBasePath(properties.getProperty("CORE_Transact_V4_RequestSpec_BasePath"))
+                .setContentType(ContentType.JSON)
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", properties.getProperty("CORE_Transact_V4_RequestSpec_BasePath"))
+                .addHeader("Accept-Encoding", "Accept-Encoding")
+                .addHeader("Connection", "keep-alive").build();
 
 
     }

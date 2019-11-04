@@ -35,7 +35,7 @@ public class extentReportBuilder {
         Properties properties = loadPropertiesFile("config.properties");
         String environmentName = properties.getProperty("ENVIRONMENT");
 //       String reporting = properties.getProperty("REPORTING");
-        String reporting ="false";
+        String reporting ="true";
 
 
         if (reporting == "true") {
