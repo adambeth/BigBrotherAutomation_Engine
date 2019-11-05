@@ -4,9 +4,9 @@
  * Author: Adam Bethlehem
  */
 
-package baseTestUtils.baseTest.reportBuilder;
+package api.testUtilities.reportBuilder;
 
-import baseTestUtils.baseTest.testConfig;
+import api.testUtilities.testConfig;
 import org.testng.ISuite;
 
 public class ISuiteListener extends testConfig implements org.testng.ISuiteListener {

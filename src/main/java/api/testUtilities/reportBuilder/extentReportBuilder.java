@@ -5,7 +5,7 @@
  * https://extentreports.com/docs/versions/4/java/klov-reporter.html
  */
 
-package baseTestUtils.baseTest.reportBuilder;
+package api.testUtilities.reportBuilder;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;

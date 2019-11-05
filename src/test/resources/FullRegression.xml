@@ -2,8 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Full GT Bank USSD Regression" thread-count="5" parallel="methods">
     <listeners>
-        <listener class-name="baseTestUtils.baseTest.reportBuilder.ListenerResults"></listener>
-        <listener class-name="baseTestUtils.baseTest.reportBuilder.ISuiteListener"></listener>
+        <listener class-name="api.testUtilities.reportBuilder.ListenerResults"></listener>
+        <listener class-name="api.testUtilities.reportBuilder.ISuiteListener"></listener>
     </listeners>
     <test verbose="2" preserve-order="true"
           name="inputRedirectTest.java">
