@@ -1,4 +1,4 @@
-package UI.pages;
+package UI.pages.Control;
 
 
 import api.testUtilities.testConfig;

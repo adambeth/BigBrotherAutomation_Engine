@@ -1,6 +1,6 @@
 package UI.tests.controlRefresh.flows;
-import UI.pages.controlPage;
-import UI.pages.loginPage;
+import UI.pages.Control.controlPage;
+import UI.pages.Control.loginPage;
 import api.testUtilities.testConfig;
 import org.testng.annotations.Test;
 

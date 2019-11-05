@@ -1,11 +1,9 @@
-package UI.pages;
+package UI.pages.Control;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 
 /**
  * Control landing POM
