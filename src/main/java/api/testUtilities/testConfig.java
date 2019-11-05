@@ -4,8 +4,8 @@
  * Set up all Request in this class
  * Author: Adam Bethlehem
  */
-package baseTestUtils.baseTest;
-import baseTestUtils.baseTest.reportBuilder.extentReportBuilder;
+package api.testUtilities;
+import api.testUtilities.reportBuilder.extentReportBuilder;
 
 import com.codeborne.selenide.Configuration;
 import io.restassured.builder.RequestSpecBuilder;
@@ -412,7 +412,7 @@ public class testConfig {
 
         CORE_Transact_V4_RequestSpec = new RequestSpecBuilder().
                 setBaseUri(qa_minion)
-                .setPort(Integer.parseInt(properties.getProperty("CORE_Transact_V4_RequestSpec_Port")))
+                .setPort(30100)
                 .setBasePath(properties.getProperty("CORE_Transact_V4_RequestSpec_BasePath"))
                 .setContentType(ContentType.JSON)
                 .addHeader("Accept", "*/*")

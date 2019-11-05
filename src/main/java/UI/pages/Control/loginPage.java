@@ -1,8 +1,7 @@
-package UI.pages;
+package UI.pages.Control;
 
 
-import baseTestUtils.baseTest.testConfig;
-import com.codeborne.selenide.Configuration;
+import api.testUtilities.testConfig;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;

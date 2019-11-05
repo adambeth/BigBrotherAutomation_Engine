@@ -3,7 +3,7 @@
 
 package API.pwmTest;
 
-import baseTestUtils.baseTest.testConfig;
+import api.testUtilities.testConfig;
 import io.restassured.http.ContentType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

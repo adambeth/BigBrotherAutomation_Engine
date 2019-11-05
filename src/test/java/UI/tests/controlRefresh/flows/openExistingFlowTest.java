@@ -1,8 +1,8 @@
 package UI.tests.controlRefresh.flows;
 
-import UI.pages.controlPage;
-import UI.pages.loginPage;
-import baseTestUtils.baseTest.testConfig;
+import UI.pages.Control.controlPage;
+import UI.pages.Control.loginPage;
+import api.testUtilities.testConfig;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.Assert;
 import org.testng.annotations.Test;

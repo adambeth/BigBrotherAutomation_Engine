@@ -5,7 +5,7 @@
  * https://extentreports.com/docs/versions/4/java/klov-reporter.html
  */
 
-package baseTestUtils.baseTest.reportBuilder;
+package api.testUtilities.reportBuilder;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -46,8 +46,7 @@ public class extentReportBuilder {
             klovReporter.setProjectName("Big Brother Is Watching");
             klovReporter.setReportName(reportName);
             klovReporter.initKlovServerConnection("http://localhost");
-  //          klovReporter.initKlovServerConnection("http://localhost");
-//     klovReporter.setExtentKlovUrl("http://localhost");
+
 
             extent.attachReporter(htmlReporter, klovReporter);
             extent.setSystemInfo("Host Name", hostName);
