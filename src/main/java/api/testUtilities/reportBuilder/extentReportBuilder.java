@@ -46,8 +46,7 @@ public class extentReportBuilder {
             klovReporter.setProjectName("Big Brother Is Watching");
             klovReporter.setReportName(reportName);
             klovReporter.initKlovServerConnection("http://localhost");
-  //          klovReporter.initKlovServerConnection("http://localhost");
-//     klovReporter.setExtentKlovUrl("http://localhost");
+
 
             extent.attachReporter(htmlReporter, klovReporter);
             extent.setSystemInfo("Host Name", hostName);
