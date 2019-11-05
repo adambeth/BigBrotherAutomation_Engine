@@ -1,13 +1,9 @@
 package UI.tests.controlRefresh;
 
 
-import UI.pages.controlPage;
-import UI.pages.loginPage;
-import com.codeborne.selenide.Configuration;
+import UI.pages.Control.controlPage;
+import UI.pages.Control.loginPage;
 import org.testng.annotations.Test;
-
-;import java.util.zip.CheckedOutputStream;
-
 public class loginTest extends controlPage {
 
     @Test
